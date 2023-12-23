@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 w-screen">
+    <div class="w-screen bg-gray-50 m-auto main-color">
+      <div class="w-full">
+        <div
+          class="w-10/12 py-3 m-auto bg-gray-50 flex items-center justify-between border-b-[1px] border-gray-200"
+        >
+          <div class="flex items-center gap-1">
+            <img src="./assets/logo3.png" class="w-9" alt="logo" />
+            <p class="uppercase text-[22px] logo">Voice Swift</p>
+          </div>
+          <p class="text-lg tracking-wider font-[500]">Hi, welcome <span class="text-[#FF9224]">superadmin</span>!</p>
+          <div class="flex gap-5">
+            <div
+              class="flex gap-1 items-center justify-center relative group cursor-pointer"
+            >
+              <img
+                src="./assets/menuIcons/website.png"
+                alt="domins"
+                class="w-10"
+              />
+              <div
+                class="absolute z-10 top-8 left-[29%] hidden group-hover:block"
+              >
+                <div class="arrow w-fit"></div>
+                <div
+                  class="bg-gray-50 rounded-lg px-3 py-2 border-[2px] border-[#cf8808] absolute left-[-380%]"
+                >
+                  <p class="text-sm text-[#0b165f] font-[500] tracking-wider">
+                    portal.voiceswift.com
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex gap-1 items-center hover:text-[#FF9224] duration-200 cursor-pointer"
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket text-xl"></i>
+              <p class="font-[600] text-lg">Logout</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="w-full bg-gray-50 shadow-lg sticky main-color top-0">
+      <ul
+        class="w-10/12 m-auto bg-gray-50 px-1 py-5 flex items-center justify-between gap-4 flex-wrap"
+      >
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/dashboard.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Dashboard</p>
+        </li>
+        <li class="flex items-center gap-2 relative group/i">
+          <img src="./assets/menuIcons/idea.png" alt="dashboard" class="w-6" />
+          <p
+            class="font-[600] cursor-pointer group-hover/i:text-[#FF9224] duration-200"
+          >
+            Dialplan
+          </p>
+
+          <ul
+            class="absolute left-[50%] rounded-b-md translate-x-[-50%] text-sm py-1 px-5 top-6 bg-gray-50 min-w-48 scale-0 group-hover/i:scale-100 duration-[.4s] easy-in-out tracking-wider shadow-lg"
+          >
+            <li
+              class="my-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">Destination</p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">Dialplan</p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">Gateways</p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">
+                Inbound Routes
+              </p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">IVR Menu</p>
+            </li>
+            <li class="mb-1 flex gap-2 items-center group cursor-pointer">
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">
+                Outbound Routes
+              </p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">Ring Groups</p>
+            </li>
+            <li
+              class="mb-1 flex gap-2 min-w-32 items-center group cursor-pointer"
+            >
+              <span
+                class="w-[5px] group-hover:w-[12px] duration-200 bg-[#0b165f] group-hover:bg-[#FF9224] h-[1px]"
+              ></span>
+              <p class="group-hover:text-[#FF9224] duration-200">Destination</p>
+            </li>
+          </ul>
+        </li>
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/customer-service.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Call Manager</p>
+        </li>
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/self-development.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Advanced</p>
+        </li>
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/resume.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Call Detail Records</p>
+        </li>
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/calling.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Phone</p>
+        </li>
+        <li class="flex items-center gap-2">
+          <img
+            src="./assets/menuIcons/missed-call.png"
+            alt="dashboard"
+            class="w-6"
+          />
+          <p class="font-[600]">Call Block</p>
+        </li>
+      </ul>
+    </nav>
+    <div class="my-10 main-color">
+        <div class="w-11/12 shadow-lg rounded-lg p-5 m-auto ">
+         <div class="flex justify-between items-center">
+            <div class="">
+                <h2 class="text-2xl tracking-wide">Dashboard</h2>
+                <p class="mt-1 text-sm">
+                  Quickly access information and tools related to your account.
+                </p>
+              </div>
+                <div class="flex items-center gap-2">
+                  <div
+                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
+                  >
+                    <i class="fa-solid fa-compress text-sm"></i>
+                    <span class="text-sm">Collapes All</span>
+                  </div>
+                  <div
+                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
+                  >
+                    <i class="fa-solid fa-pen text-sm"></i>
+                    <span class="text-sm">EDIT</span>
+                  </div> 
+                  <div
+                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
+                  >
+                    <i class="fa-solid fa-gear text-sm"></i>
+                    <span class="text-sm">SETTING</span>
+                  </div>
+                </div>
+         </div>
+        <div
+        class="w-full mt-8 m-auto grid grid-cols-3 items-center justify-center gap-5 flex-wrap"
+      >
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+        <div
+          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
+        ></div>
+      </div>
+          </div>
+      </div>
+     
+    </div>
+  </body>
+</html>
