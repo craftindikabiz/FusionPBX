@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <meta charset="UTF-8" />
+            <meta
+                name="viewport"
+                content="widtd=device-width, initial-scale=1.0"
+            />
+            <title>Dashboard</title>
+            <link rel="stylesheet" href="./style.css" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+                rel="preconnect"
+                href="https://fonts.gstatic.com"
+                crossorigin
+            />
+
+            <link
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+                rel="stylesheet"
+            />
+            <script
+                src="https://kit.fontawesome.com/yourcode.js"
+                crossorigin="anonymous"
+            ></script>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+    </head>
+    <body class="bg-white min-h-screen lg:px-10">
+        <div
+            class="flex flex-col lg:flex-row items-center justify-between my-4"
+        >
+            <div class="my-auto">
+                <h2 class="text-amber-500 text-2xl font-semibold">
+                    Call Detail Records
+                </h2>
+            </div>
+            <div class="flex gap-3 text-white text-sm font-semibold">
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img
+                        src="./assets/callDetails/statistics.png"
+                        alt="statistics"
+                    />
+                    <h2 class="my-auto">Statistics</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/refresh.png" alt="refresh" />
+                    <h2 class="my-auto">Refresh</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/export.png" alt="export" />
+                    <h2 class="my-auto">Export</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/delete.png" alt="delete" />
+                    <h2 class="my-auto">Delete</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/globe.png" alt="globe" />
+                    <h2 class="my-auto">Show All</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/back.png" alt="back" />
+                    <h2 class="my-auto">Back</h2>
+                </button>
+                <button
+                    class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+                >
+                    <img src="./assets/callDetails/forward.png" alt="forward" />
+                </button>
+            </div>
+        </div>
+        <p class="text-xs mb-3 text-[#5f5f5f]">
+            Call Detail Records (CDRs) are detailed information on the calls.
+            The information contains source, destination, duration, and other
+            useful call details. Use the fields to filter the information for
+            the specific call records that are desired. Records in the call list
+            can be saved locally using the Export button.
+        </p>
+        <div class="text-[#2e294e] text-sm w-4/5 mx-auto">
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="">
+                    <label for="div" class="">Direction</label>
+                    <div class="flex gap-3 mb-3">
+                        <select
+                            type="text"
+                            name="direction"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>Inbound</option>
+                            <option>Outbond</option>
+                            <option>Local</option>
+                        </select>
+                        <select
+                            type="text"
+                            name="leg"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>a-leg</option>
+                            <option>b-leg</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="">
+                    <label for="status" class="">Status</label>
+                    <div class="mb-3">
+                        <select
+                            type="text"
+                            name="status"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>Answered</option>
+                            <option>Missed</option>
+                            <option>Voicemail</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="mb-3">
+                    <label for="extension" class="">Extension</label>
+                    <div>
+                        <select
+                            type="text"
+                            name="extension"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>00001</option>
+                            <option>10001</option>
+                            <option>10002</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="callerid" class="">Caller ID</label>
+                    <div class="flex gap-3">
+                        <input
+                            type="text"
+                            name="name"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Name"
+                        />
+                        <input
+                            type="number"
+                            name="number"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Number"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="mb-3">
+                    <label for="startrange" class="">Start Range</label>
+                    <div class="flex gap-3">
+                        <input
+                            type="datetime"
+                            name="from"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="From"
+                        />
+                        <input
+                            type="datetime"
+                            name="to"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="To"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="duration" class="">Duration (sec)</label>
+                    <div class="flex gap-3">
+                        <input
+                            type="number"
+                            name="minimum-duration"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Minimum"
+                        />
+                        <input
+                            type="number"
+                            name="maximum-duration"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Maximum"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="mb-3">
+                    <label for="caller-destination" class=""
+                        >Caller Destination</label
+                    >
+                    <div>
+                        <input
+                            type="text"
+                            name="caller-destination"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="destination" class="">Destination</label>
+                    <div>
+                        <input
+                            type="text"
+                            name="destination"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="mb-3">
+                    <label for="tta" class="">TTA (sec)</label>
+                    <div class="flex gap-3">
+                        <input
+                            type="number"
+                            name="minimum-tta"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Minimum"
+                        />
+                        <input
+                            type="number"
+                            name="maximum-tta"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                            placeholder="Maximum"
+                        />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="hangeupcause" class="">Hangup Cause</label>
+                    <div>
+                        <select
+                            type="text"
+                            name="status"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>Normal Clearing</option>
+                            <option>Alloted Timeout</option>
+                            <option>Attended Transfer</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:grid lg:grid-cols-2 gap-10">
+                <div class="mb-3">
+                    <label for="recording" class="">Recording</label>
+                    <div>
+                        <select
+                            type="text"
+                            name="recording"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>True</option>
+                            <option>False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="order-by" class="">Order</label>
+                    <div class="flex gap-3">
+                        <select
+                            type="text"
+                            name="order-by"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>Start</option>
+                            <option>TTA</option>
+                            <option>Duration</option>
+                        </select>
+                        <select
+                            type="text"
+                            name="order"
+                            class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2"
+                        >
+                            <option></option>
+                            <option>Ascending</option>
+                            <option>Descending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-xs mb-3 text-[#5f5f5f]">
+            Note: Destination and Caller ID (CID) Name fields support the use of
+            an asterisk ('*') as a wildcard character.
+        </p>
+        <div
+            class="flex justify-end gap-4 text-white text-sm font-semibold mb-4"
+        >
+            <button
+                class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+            >
+                <img src="./assets/callDetails/settings.png" alt="statistics" />
+                <h2 class="my-auto">Advanced</h2>
+            </button>
+            <button
+                class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+            >
+                <img src="./assets/callDetails/reset.png" alt="refresh" />
+                <h2 class="my-auto">Reset</h2>
+            </button>
+            <button
+                class="flex gap-1 bg-[#e89034] p-2.5 hover:bg-amber-500 rounded-md"
+            >
+                <img src="./assets/callDetails/search.png" alt="export" />
+                <h2 class="my-auto">Search</h2>
+            </button>
+        </div>
+        <div class="text-sm mb-5">
+            <table class="w-full">
+                <tr class="font-semibold text-amber-500 border-b">
+                    <th class="w-1/16">
+                        <input
+                            type="checkbox"
+                            name="caller-details"
+                            id="caller-details"
+                            class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500"
+                        />
+                    </th>
+                    <th class="w-1/16">&nbsp;&nbsp;&nbsp;</th>
+                    <th class="w-1/16">Ext.</th>
+                    <th class="w-1/16">Caller Name</th>
+                    <th class="w-1/16">Caller Number</th>
+                    <th class="w-1/16">Caller Destination</th>
+                    <th class="w-1/16">Destination</th>
+                    <th class="w-1/16">Recording</th>
+                    <th class="w-1/16">Date</th>
+                    <th class="w-1/16">Time</th>
+                    <th class="w-1/16">TTA</th>
+                    <th class="w-1/16">Duration</th>
+                    <th class="w-1/16">PDD</th>
+                    <th class="w-1/16">MOS</th>
+                    <th class="w-1/16">Status</th>
+                    <th class="w-1/16">Hangup Cause</th>
+                </tr>
+                <tr class="text-center hover:text-amber-500 border-b">
+                    <td class="w-1/16">
+                        <input
+                            type="checkbox"
+                            name="caller-details"
+                            id="caller-details1"
+                            class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500"
+                        />
+                    </td>
+                    <td class="w-1/16"></td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">
+                        <div class="flex justify-center gap-1 my-1">
+                            <img
+                                src="./assets/callDetails/play.png"
+                                alt="play"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            /><img
+                                src="./assets/callDetails/download.png"
+                                alt="download"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            />
+                        </div>
+                    </td>
+                    <td class="w-1/16">24 Dec 2023</td>
+                    <td class="w-1/16">04:06:34 pm</td>
+                    <td class="w-1/16">TTA</td>
+                    <td class="w-1/16">0:00:00</td>
+                    <td class="w-1/16">0.04s</td>
+                    <td class="w-1/16">4.50</td>
+                    <td class="w-1/16">Voicemail</td>
+                    <td class="w-1/16">Normal Clearing</td>
+                </tr>
+                <tr class="text-center hover:text-amber-500 border-b">
+                    <td class="w-1/16">
+                        <input
+                            type="checkbox"
+                            name="caller-details"
+                            id="caller-details2"
+                            class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500"
+                        />
+                    </td>
+                    <td class="w-1/16"></td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">
+                        <div class="flex justify-center gap-1 my-1">
+                            <img
+                                src="./assets/callDetails/play.png"
+                                alt="play"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            /><img
+                                src="./assets/callDetails/download.png"
+                                alt="download"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            />
+                        </div>
+                    </td>
+                    <td class="w-1/16">24 Dec 2023</td>
+                    <td class="w-1/16">04:06:34 pm</td>
+                    <td class="w-1/16">TTA</td>
+                    <td class="w-1/16">0:00:00</td>
+                    <td class="w-1/16">0.04s</td>
+                    <td class="w-1/16">4.50</td>
+                    <td class="w-1/16">Voicemail</td>
+                    <td class="w-1/16">Normal Clearing</td>
+                </tr>
+                <tr class="text-center hover:text-amber-500 border-b">
+                    <td class="w-1/16">
+                        <input
+                            type="checkbox"
+                            name="caller-details"
+                            id="caller-details3"
+                            class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500 checked:bg-amber-500"
+                        />
+                    </td>
+                    <td class="w-1/16"></td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">10010</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">18888800520</td>
+                    <td class="w-1/16">
+                        <div class="flex justify-center gap-1 my-1">
+                            <img
+                                src="./assets/callDetails/play.png"
+                                alt="play"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            /><img
+                                src="./assets/callDetails/download.png"
+                                alt="download"
+                                class="bg-[#e89034] hover:bg-amber-500 rounded-md p-1 h-6 w-6"
+                            />
+                        </div>
+                    </td>
+                    <td class="w-1/16">24 Dec 2023</td>
+                    <td class="w-1/16">04:06:34 pm</td>
+                    <td class="w-1/16">TTA</td>
+                    <td class="w-1/16">0:00:00</td>
+                    <td class="w-1/16">0.04s</td>
+                    <td class="w-1/16">4.50</td>
+                    <td class="w-1/16">Voicemail</td>
+                    <td class="w-1/16">Normal Clearing</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

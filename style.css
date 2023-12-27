@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -49,4 +50,8 @@ body {
 }
 .shadw {
   box-shadow: 0px 0px 10px 0px rgb(186, 186, 186);
+}
+
+table {
+  border-spacing: 0 50px; 
 }
