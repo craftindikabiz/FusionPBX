@@ -12,17 +12,30 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
       rel="stylesheet"
     />
+    <script src="scripts/DragDropTouch.js"></script>
     <script
       src="https://kit.fontawesome.com/yourcode.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              mainColor: '#ff9224',
+            }
+          }
+        }
+      }
+    </script>
+  
   </head>
   <body class="bg-gray-50 w-screen">
-    <div class="w-screen bg-gray-50 m-auto main-color">
-      <div class="w-full">
+    <div class="w-screen bg-gray-50 m-auto text-sky-700">
+      <div class="w-full fixed top-0 z-50">
         <div
-          class="w-10/12 py-3 m-auto bg-gray-50 flex items-center justify-between border-b-[1px] border-gray-200"
+          class="w-11/12  py-3 m-auto bg-gray-50 flex items-center justify-between border-b-[1px] border-gray-200 "
         >
           <div class="flex items-center gap-1">
             <img src="./assets/logo3.png" class="w-9" alt="logo" />
@@ -61,7 +74,7 @@
         </div>
       </div>
     </div>
-    <nav class="w-full bg-gray-50 shadow-lg sticky main-color top-0">
+    <!-- <nav class="w-full bg-gray-50 shadow-lg sticky text-sky-700 top-0">
       <ul
         class="w-10/12 m-auto bg-gray-50 px-1 py-5 flex items-center justify-between gap-4 flex-wrap"
       >
@@ -193,62 +206,467 @@
           <p class="font-[600]">Call Block</p>
         </li>
       </ul>
-    </nav>
-    <div class="my-10 main-color">
-        <div class="w-11/12 shadow-lg rounded-lg p-5 m-auto ">
-         <div class="flex justify-between items-center">
-            <div class="">
-                <h2 class="text-2xl tracking-wide">Dashboard</h2>
-                <p class="mt-1 text-sm">
+    </nav> -->
+    <div class="my-10 mt-20 text-sky-700">
+        <div class="w-11/12  px-5 max-xl:w-full max-w-[1400px] m-auto ">
+         <div class="flex justify-between items-center gap-4 flex-wrap">
+            <div class="pr-2">
+                <h2 class="text-2xl tracking-wide text-mainColor">Dashboard</h2>
+                <p class="mt-1 text-sky-700 text-sm">
                   Quickly access information and tools related to your account.
                 </p>
               </div>
-                <div class="flex items-center gap-2">
-                  <div
-                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
-                  >
-                    <i class="fa-solid fa-compress text-sm"></i>
-                    <span class="text-sm">Collapes All</span>
-                  </div>
-                  <div
-                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
-                  >
-                    <i class="fa-solid fa-pen text-sm"></i>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <button id="collapesAll" class="btn px-3 py-[6px] relative overflow-hidden rounded-sm bg-mainColor text-white" role="button"> <i class="fa-solid fa-compress text-sm"></i>
+                    <span class="text-sm">Collapes All</span></button>
+                  <!-- <button class="btn px-3 py-[6px] relative overflow-hidden rounded-sm bg-mainColor text-white" role="button"> <i class="fa-regular fa-pen-to-square"></i>
                     <span class="text-sm">EDIT</span>
-                  </div> 
-                  <div
-                    class="bg-[#0b165f] rounded-sm text-white px-3 py-1 cursor-pointer  hover:bg-blue-800 duration-200"
-                  >
-                    <i class="fa-solid fa-gear text-sm"></i>
-                    <span class="text-sm">SETTING</span>
-                  </div>
+                  </button> -->
+                 <a href="/setting.html">
+                  <button class="btn px-3 py-[6px] relative overflow-hidden rounded-sm bg-mainColor text-white" role="button"> <i
+                      class="fa-solid fa-gear text-sm"></i>
+                    <span class="text-sm">SETTING</span></button>
+                 </a>
+                
                 </div>
          </div>
-        <div
-        class="w-full mt-8 m-auto grid grid-cols-3 items-center justify-center gap-5 flex-wrap"
+        <div id="sortlist"
+        class=" w-full max-[700px]:w-10/12 max-[500px]:w-[95%] mt-4 m-auto grid grid-cols-3 max-lg:grid-cols-2 max-[700px]:grid-cols-1  items-start justify-center gap-5 "
       >
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
-        <div
-          class="bg-gray-50 rounded-lg shadow-lg border-2 border-[#0b165f]"
-        ></div>
+        <section class="shadw rounded-lg li">
+          <div id="chart1"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class=" ">
+        <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center">
+            <h2 class="text-xl tracking-wide text-sky-700 text-center py-3  pt-4">Missed call</h2>
+              <canvas id="myChart1"></canvas>
+       </div>
+        <div class="flex items-center bg-gray-200 font-[500] text-sky-700 justify-between mt-4 py-2 px-3 gap-1 text-xs">
+          <p class="">Number</p>
+          <p class="">Missed</p>
+        </div>
+      <div class="max-h-[175px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">010010</p>
+          <p class=" text-xs text-sky-700">12/24 16:06</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">010010</p>
+          <p class=" text-xs text-sky-700">12/24 16:06</p>
+        </div>
+      </div>
+        <div class="w-full text-center py-2 flex justify-center  ">
+          <a href="#" class="w-fit hover:text-blue-500 duration-200 border-[1px] border-dashed px-8 py-1 cursor-pointer">view all</a>
+        </div>
+        </div>
+      </div>
+      <div id="collapes1" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+        
+        <section class="shadw rounded-lg li">
+          <div id="chart2"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class="">
+          <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center">
+            <h2 class="text-xl tracking-wide text-sky-700 text-center py-3 pt-4">Recent calls</h2>
+            <canvas id="myChart2"></canvas>
+          </div>
+        <div class="flex items-center bg-gray-200 text-sky-700 justify-between mt-4 py-2 px-3 gap-1 text-xs ">
+          <p class="">Number</p>
+          <p class="">Data / Time</p>
+        </div>
+      <div class="max-h-[175px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">010010</p>
+          <p class=" text-xs text-sky-700 pr-1">12/24 16:06</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">010010</p>
+          <p class=" text-xs text-sky-700 pr-1">12/24 16:06</p>
+        </div>
+      </div>
+        <div class="w-full text-center py-2 flex justify-center  ">
+          <a href="#" class="w-fit hover:text-blue-500 duration-200 border-[1px] border-dashed px-8 py-1 cursor-pointer">view all</a>
+        </div>
+        </div>
+      </div>
+      <div id="collapes2" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+  
+        <section class="shadw rounded-lg li"> 
+          <div id="chart3"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class="">
+        <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center">
+            <h2 class="text-xl tracking-wide text-sky-700 text-center py-3 pt-4">New Messages</h2>
+            <canvas id="myChart3"></canvas>
+        </div>
+        <div class="flex items-center bg-gray-200  text-sky-700 justify-between mt-4 px-3 py-2 gap-1 text-xs">
+          <p class="w-8/12">Voicemail</p>
+          <p class="w-2/12 text-center">New</p>
+          <p class="w-2/12 text-center">Total</p>
+        </div>
+      <div class="max-h-[175px] cursor-pointer  overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">test</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+     
+      </div>
+        <div class="w-full text-center py-2 flex justify-center  ">
+          <a href="#" class="w-fit hover:text-blue-500 duration-200 border-[1px] border-dashed px-8 py-1 cursor-pointer">view all</a>
+        </div>
+        </div>
+      </div>
+      <div id="collapes3" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+   
+        <section class="shadw rounded-lg li">
+          <div id="chart4"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class="">
+         
+        <div class="h-[235px] max-w-[400px] m-auto flex flex-col items-center justify-center">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center py-3 pt-4">Disk Usage</h2>
+          <canvas id="myChart4" ></canvas>
+        </div>
+        <div class="flex items-center bg-gray-200 text-sky-700 justify-between mt-4 px-3 py-2 gap-1 text-xs">
+          <p class="">Item</p>
+          <p class="">Value</p>
+        </div>
+      <div class="max-h-[215px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">FusionPBX</p>
+          <p class=" text-xs text-sky-700">5.1.0</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">OS Uptime</p>
+          <p class=" text-xs text-sky-700">1 day, 7 hours, 7 minutes</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Available Memory</p>
+          <p class=" text-xs text-sky-700">15 Gi</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Disk Usage</p>
+          <p class=" text-xs text-sky-700">2%</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">DB Connections</p>
+          <p class=" text-xs text-sky-700">11</p>
+        </div>
+      </div>
+     
+        </div>
+      </div>
+      <div id="collapes4" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+
+        <section class="shadw rounded-lg li">
+          <div id="chart5"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class=" ">
+         
+        <div class="h-[235px] max-w-[400px] m-auto flex flex-col items-center justify-center">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center py-3 pt-4">CPU Usage</h2>
+          <canvas id="myChart5" ></canvas>
+        </div>
+        <div class="flex items-center bg-gray-200 text-sky-700 justify-between mt-4 px-3 py-2 gap-1 text-xs ">
+          <p class="">Name</p>
+          <p class="">Value</p>
+        </div>
+      <div class="max-h-[215px] cursor-pointer  overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">CPU Usage</p>
+          <p class=" text-xs text-sky-700">0.02%</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">CPU Cores</p>
+          <p class=" text-xs text-sky-700">6</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Load Average (1)</p>
+          <p class=" text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Load Average (5)</p>
+          <p class=" text-xs text-sky-700">0.01</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Load Average (15)</p>
+          <p class=" text-xs text-sky-700">0</p>
+        </div>
+      </div>
+        
+        </div>
+      </div>
+      <div id="collapes5" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+
+        <section class="shadw rounded-lg li">
+          <div id="chart6"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class=" ">
+        
+       <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center py-3 pt-4">Switch Status</h2>
+        <canvas id="myChart6" ></canvas>
+       </div>
+        <div class="flex items-center bg-gray-200 font-[500] text-sky-700 justify-between mt-4 px-3 py-2 gap-1 text-xs">
+          <p class="">Number</p>
+          <p class="pr-[10px]">Value</p>
+        </div>
+      <div class="h-[210px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Switch</p>
+          <p class=" text-xs text-sky-700">12/24 16:06</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Switch Uptime</p>
+          <p class=" text-xs text-sky-700">12/24 16:06</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Channels</p>
+          <p class=" text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class=" text-xs">Registrations</p>
+          <p class=" text-xs text-sky-700">0</p>
+        </div>
+      </div>
+   
+        </div>
+      </div>
+      <div id="collapes6" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+
+        <section class="shadw rounded-lg li">
+          <div id="chart7"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class=" ">
+       <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center ">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center pt-4">System Counts</h2>
+          <canvas id="myChart7"></canvas>
+       </div>
+        <div class="flex items-center bg-gray-200 text-sky-700justify-between mt-4 px-3 py-2 gap-1 text-xs text-sky-700">
+          <p class="w-8/12">Item</p>
+          <p class="w-2/12 text-center">Disabled</p>
+          <p class="w-2/12 text-center">Total</p>
+        </div>
+      <div class="max-h-[200px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-1 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Domains</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Devices</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Extensions</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Gateways</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Users</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Destinations</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">CC Queues</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">IVR Menus</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Ring Groups</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class=" py-1 w-full px-1 flex justify-between s-color border-t-[1px]  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs pl-1">Voicemail</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+        <div class="flex items-center bg-gray-200 text-sky-700 justify-between py-2 px-3 gap-1 text-xs ">
+          <p class="w-8/12">Item</p>
+          <p class="w-2/12 text-center">New</p>
+          <p class="w-2/12 text-center">Total</p>
+        </div>
+        <div class=" py-1 w-full px-3 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-8/12 text-xs ">Messages</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+          <p class="w-2/12 text-center text-xs text-sky-700">0</p>
+        </div>
+      </div>
+    
+        </div>
+      </div>
+      <div id="collapes7" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section>
+
+        <section class="shadw rounded-lg li">
+          <div id="chart8"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class=" ">
+       <div class="h-[245px] max-w-[350px] m-auto flex flex-col justify-center items-center  ">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center  pt-4">Call Forword</h2>
+          <canvas id="myChart8"></canvas>
+       </div>
+        <div class="flex items-center  tex  bg-gray-200 text-sky-700 justify-between mt-4 px-3 py-2 gap-1 text-xm text-sky-700">
+          <p class="w-1/4 text-center ">Extension</p>
+          <p class="w-1/4 text-center">Call Forward</p>
+          <p class="w-1/4 text-center">Follow Me</p>
+          <p class="w-1/4 text-center">Do Not Disturb</p>
+        </div>
+      <div class="max-h-[325px] cursor-pointer overflow-y-auto ">
+        <div class=" py-1 w-full px-3 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-1/4 text-xs text-center">0</p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+        </div>
+        <div class=" py-1 w-full px-3 flex  justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-1/4 text-xs text-center">0101</p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+          <p class="w-1/4 text-center text-xs text-sky-700"></p>
+        </div>
+      </div>
+    
+        </div>
+      </div>
+      <div id="collapes8" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section> 
+
+        <section class="shadw rounded-lg li">
+          <div id="chart9"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class="  relative">
+       <div class="h-[235px] max-w-[400px] m-auto flex flex-col justify-center items-center">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center  pt-4">Ring Group Forword</h2>
+          <canvas id="myChart9"></canvas>
+       </div>
+        <button class=" btn absolute top-[211px] right-3  rounded-sm text-white px-3 py-1 cursor-pointer bg-mainColor ">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span class="text-sm">Save</span>
+        </button>
+        <div class="flex items-center tex  bg-gray-200 text-sky-700 justify-between mt-4 pl-2 py-1 gap-1 text-sm  border-b-[1px]">
+          <p class="w-2/12 text-center">Name</p>
+          <p class="w-4/12 text-center  ">Extension</p>
+          <p class="w-2/12 text-center">Forwarding</p>
+          <p class="w-4/12 text-center ">Destination</p>
+        </div>
+      <div class="max-h-[215px] cursor-pointer overflow-y-auto ">
+        <div class=" w-full pl-2 py-1 flex items-center justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-2/12 text-xs text-center">RG-1999</p>
+          <p class="w-4/12 text-center text-xs  text-sky-700">10100100</p>
+          <div class="checkbox-wrapper-51 w-2/12  flex justify-center">
+            <input type="checkbox" id="cbx-51" />
+            <label for="cbx-51" class="toggle">
+              <span>
+                <svg width="10px" height="10px" viewBox="0 0 10 10">
+                  <path d="M5,1 L5,1 C2.790861,1 1,2.790861 1,5 L1,5 C1,7.209139 2.790861,9 5,9 L5,9 C7.209139,9 9,7.209139 9,5 L9,5 C9,2.790861 7.209139,1 5,1 L5,9 L5,1 Z"></path>
+                </svg>
+              </span>
+            </label>
+          </div>
+         <input class="w-4/12 text-xs text-center bg-white py-1  border-[1px] border-[#ff9224] border-dashed rounded-sm s-color" type="text" placeholder="Number" />
+        </div>
+      </div>
+    
+        </div>
+      </div>
+      <div id="collapes9" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section> 
+
+        <section class="shadw rounded-lg li">
+          <div id="chart10"
+          class="bg-gray-50 rounded-lg  flex justify-between flex-col h-[500px] duration-300"
+        >
+        <div class="  relative">
+     <div class="h-[235px] max-w-[400px] m-auto flex flex-col  justify-center items-center">
+          <h2 class="text-xl tracking-wide text-sky-700 text-center  pt-4">Caller ID</h2>
+          <canvas id="myChart10"></canvas>
+     </div>
+        <button
+        class=" btn absolute top-[211px] right-3  rounded-sm text-white px-3 py-1 cursor-pointer bg-mainColor "
+      >
+      <i class="fa-solid fa-truck-fast"></i>
+        <span class="text-sm">Save</span>
+      </button>
+        <div class="flex items-center justify-between text-xs text-sky-700  bg-gray-200 justify-between mt-4 pl-2 py-2 gap-1 ">
+          <p class="w-3/12 text-center  ">Extension</p>
+          <p class="w-4/12 text-center">Caller ID</p>
+          <p class="w-4/12 text-center ">Destination</p>
+        </div>
+      <div class="h-[215px] cursor-pointer overflow-y-auto ">
+        <div class=" w-full pl-2 py-1 flex items-center justify-between s-color border-t-[1px] w-full  hover:text-amber-700 duration-200 gap-1">
+          <p class="w-3/12 text-center text-xs  ">10100100</p>
+         <input class="w-4/12 text-xs text-center bg-white py-1  border-[1px] border-[#ff9224] border-dashed rounded-sm s-color" type="text" placeholder="ID" />
+         <input class="w-4/12 text-xs text-center bg-white py-1  border-[1px] border-[#ff9224] border-dashed rounded-sm s-color" type="text"  placeholder="Number"/>
+        </div>
+      </div>
+    
+        </div>
+      </div>
+      <div id="collapes10" class="bg-gray-200 rounded-b-lg cursor-pointer hover:bg-gray-300 duration-200 hover:text-blue-500  font-[900] text-center">
+        <i class="fa-solid fa-ellipsis"></i>
+      </div>
+        </section> 
       </div>
           </div>
       </div>
-     
-    </div>
+    
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./main.js"></script>
+  <script>
+    slist(document.getElementById("sortlist"));
+  </script>
+ 
 </html>
