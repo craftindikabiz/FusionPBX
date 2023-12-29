@@ -6,8 +6,9 @@ const collapes5 = document.getElementById("collapes5");
 const collapes6 = document.getElementById("collapes6");
 const collapes7 = document.getElementById("collapes7");
 const collapes8 = document.getElementById("collapes8");
-const collapes9 = document.getElementById("collapes9");
-const collapes10 = document.getElementById("collapes10");
+// const collapes9 = document.getElementById("collapes9");
+// const collapes10 = document.getElementById("collapes10");
+
 const chart1 = document.getElementById("chart1");
 const chart2 = document.getElementById("chart2");
 const chart3 = document.getElementById("chart3");
@@ -16,8 +17,8 @@ const chart5 = document.getElementById("chart5");
 const chart6 = document.getElementById("chart6");
 const chart7 = document.getElementById("chart7");
 const chart8 = document.getElementById("chart8");
-const chart9 = document.getElementById("chart9");
-const chart10 = document.getElementById("chart10");
+// const chart9 = document.getElementById("chart9");
+// const chart10 = document.getElementById("chart10");
 
 collapes1.addEventListener("click", () => {
   chart1.classList.toggle("collapes");
@@ -43,25 +44,25 @@ collapes7.addEventListener("click", () => {
 collapes8.addEventListener("click", () => {
   chart8.classList.toggle("collapes");
 });
-collapes9.addEventListener("click", () => {
-  chart9.classList.toggle("collapes");
-   document.querySelector("#chart9 .btn").classList.toggle("hidden")
-});
-collapes10.addEventListener("click", () => {
-  chart10.classList.toggle("collapes");
-  document.querySelector("#chart10 .btn").classList.toggle("hidden")
-});
+// collapes9.addEventListener("click", () => {
+//   chart9.classList.toggle("collapes");
+//    document.querySelector("#chart9 .btn").classList.toggle("hidden")
+// });
+// collapes10.addEventListener("click", () => {
+//   chart10.classList.toggle("collapes");
+//   document.querySelector("#chart10 .btn").classList.toggle("hidden")
+// });
 // -----------------------chaerts-------------------------------
-const ctx1 = document.getElementById("myChart1");
-const ctx2 = document.getElementById("myChart2");
-const ctx3 = document.getElementById("myChart3");
+// const ctx1 = document.getElementById("myChart1");
+// const ctx2 = document.getElementById("myChart2");
+// const ctx3 = document.getElementById("myChart3");
 const ctx4 = document.getElementById("myChart4");
 const ctx5 = document.getElementById("myChart5");
-const ctx6 = document.getElementById("myChart6");
+// const ctx6 = document.getElementById("myChart6");
 const ctx7 = document.getElementById("myChart7");
 const ctx8 = document.getElementById("myChart8");
-const ctx9 = document.getElementById("myChart9");
-const ctx10 = document.getElementById("myChart10");
+// const ctx9 = document.getElementById("myChart9");
+// const ctx10 = document.getElementById("myChart10");
 
 const chart_counter = {
   id: "chart_counter",
@@ -84,106 +85,106 @@ const chart_counter2 = {
     ctx.save();
     const xCoor = chart.getDatasetMeta(0).data[0].x;
     const yCoor = chart.getDatasetMeta(0).data[0].y;
-    ctx.font = " 40px sans-serif";
-    ctx.fillStyle = "#0b165f";
+    ctx.font = " 25px sans-serif";
+    ctx.fillStyle = "#003f5c";
     ctx.textAlign = "center";
     ctx.textBaseline = "bottom";
-    ctx.fillText("19%", xCoor, yCoor);
+    ctx.fillText("2%", xCoor, yCoor);
   },
 };
 
-new Chart(ctx1, {
-  type: "doughnut",
-  data: {
-    labels: ["Red", "Blue"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 0.01],
-        borderWidth: 0,
-        backgroundColor: ["#f43f5e", "#d4d4d8"],
-        hoverOffset: 1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        filter: (tooltipItem) => {
-          return tooltipItem.dataIndex === 0;
-        },
-      },
-    },
-  },
-});
-new Chart(ctx2, {
-  type: "doughnut",
-  data: {
-    labels: ["Red", "Blue"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 0.01],
-        borderWidth: 0,
-        backgroundColor: ["#3b82f6", "#d4d4d8"],
-        hoverOffset: 1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        filter: (tooltipItem) => {
-          return tooltipItem.dataIndex === 0;
-        },
-      },
-    },
-  },
-});
-new Chart(ctx3, {
-  type: "doughnut",
-  data: {
-    labels: ["Red", "Blue"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 0.01],
-        borderWidth: 0,
-        backgroundColor: ["#ff9224", "#d4d4d8"],
-        borderColor: "#0b165f",
-        hoverOffset: 1.1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        filter: (tooltipItem) => {
-          return tooltipItem.dataIndex === 0;
-        },
-      },
-    },
-  },
-});
-const x = 19;
+// new Chart(ctx1, {
+//   type: "doughnut",
+//   data: {
+//     labels: ["Red", "Blue"],
+//     datasets: [
+//       {
+//         label: "My First Dataset",
+//         data: [300, 0.01],
+//         borderWidth: 0,
+//         backgroundColor: ["#f43f5e", "#d4d4d8"],
+//         hoverOffset: 1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       tooltip: {
+//         filter: (tooltipItem) => {
+//           return tooltipItem.dataIndex === 0;
+//         },
+//       },
+//     },
+//   },
+// });
+// new Chart(ctx2, {
+//   type: "doughnut",
+//   data: {
+//     labels: ["Red", "Blue"],
+//     datasets: [
+//       {
+//         label: "My First Dataset",
+//         data: [300, 0.01],
+//         borderWidth: 0,
+//         backgroundColor: ["#3b82f6", "#d4d4d8"],
+//         hoverOffset: 1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       tooltip: {
+//         filter: (tooltipItem) => {
+//           return tooltipItem.dataIndex === 0;
+//         },
+//       },
+//     },
+//   },
+// });
+// new Chart(ctx3, {
+//   type: "doughnut",
+//   data: {
+//     labels: ["Red", "Blue"],
+//     datasets: [
+//       {
+//         label: "My First Dataset",
+//         data: [300, 0.01],
+//         borderWidth: 0,
+//         backgroundColor: ["#ff9224", "#d4d4d8"],
+//         borderColor: "#0b165f",
+//         hoverOffset: 1.1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       tooltip: {
+//         filter: (tooltipItem) => {
+//           return tooltipItem.dataIndex === 0;
+//         },
+//       },
+//     },
+//   },
+// });
+// const x = 19;
 new Chart(ctx4, {
   type: "doughnut",
 
@@ -193,18 +194,18 @@ new Chart(ctx4, {
     datasets: [
       {
         label: "My First Dataset",
-        data: [x, 100 - x],
+        data: [2, 100 - 2],
         borderWidth: 0,
-        backgroundColor: ["#16a34a", "#d4d4d8"],
-        borderColor: "#0b165f",
+        backgroundColor: ["#003f5c", "#d4d4d8"],
+        borderColor: "#003f5c",
         hoverOffset: 1.1,
       },
     ],
   },
-  plugins: [chart_counter2],
+  // plugins: [chart_counter2],
   options: {
-    aspectRatio: 3,
-    cutout: "85%",
+    aspectRatio: 1.3,
+    cutout: "75%",
     circumference: 180,
     rotation: 270,
     plugins: {
@@ -228,18 +229,18 @@ new Chart(ctx5, {
     datasets: [
       {
         label: "My First Dataset",
-        data: [x, 100 - x],
+        data: [20, 100 - 2],
         borderWidth: 0,
-        backgroundColor: ["#6b21a8", "#d4d4d8"],
-        borderColor: "#0b165f",
+        backgroundColor: ["#f95d6a", "#d4d4d8"],
+        borderColor: "#f95d6a",
         hoverOffset: 1.1,
       },
     ],
   },
-  plugins: [chart_counter2],
+
   options: {
-    aspectRatio: 3,
-    cutout: "85%",
+    aspectRatio: 1.3,
+    cutout: "75%",
     circumference: 180,
     rotation: 270,
     plugins: {
@@ -255,56 +256,57 @@ new Chart(ctx5, {
   },
 });
 
-new Chart(ctx6, {
-  type: "doughnut",
-  data: {
-    labels: ["Red", "Blue"],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 0.01],
-        borderWidth: 0,
-        backgroundColor: ["#2dd4bf", "#d4d4d8"],
-        hoverOffset: 1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        filter: (tooltipItem) => {
-          return tooltipItem.dataIndex === 0;
-        },
-      },
-    },
-  },
-});
+// new Chart(ctx6, {
+//   type: "doughnut",
+//   data: {
+//     labels: ["Red", "Blue"],
+//     datasets: [
+//       {
+//         label: "My First Dataset",
+//         data: [300, 0.01],
+//         borderWidth: 0,
+//         backgroundColor: ["#2dd4bf", "#d4d4d8"],
+//         hoverOffset: 1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         display: false,
+//       },
+//       tooltip: {
+//         filter: (tooltipItem) => {
+//           return tooltipItem.dataIndex === 0;
+//         },
+//       },
+//     },
+//   },
+// });
 new Chart(ctx7, {
   type: "doughnut",
   data: {
-    labels: [`Active:${x}`, "Inactive"],
+    labels: [`Active:${3}`, `Inactive${0}`],
     datasets: [
       {
-        label: "Active",
-        data: [x, 0.01],
+        labels: ["Active","Inactive"],
+        data: [3, 2],
         borderWidth: 0,
         backgroundColor: ["#a3e635", "#d4d4d8"],
         hoverOffset: 1,
       },
     ],
   },
-  plugins: [chart_counter],
+  // plugins: [chart_counter],
   options: {
-    aspectRatio: 2,
-    cutout: "85%",
+    aspectRatio: 1.2,
+    cutout: "75%",
     plugins: {
       legend: {
+        display:false,
         labels: {
           boxWidth: 12,
         },
@@ -318,8 +320,9 @@ new Chart(ctx7, {
   },
 });
 new Chart(ctx8, {
-  type: "doughnut",
+  type: "bar",
   data: {
+    
     labels: [
       `Active:${3}`,
       `Call Forward:${2}`,
@@ -328,6 +331,7 @@ new Chart(ctx8, {
     ],
     datasets: [
       {
+        
         labels: ["Active", "Call Forward", "Follow Me", "Do Not Disturb"],
         data: [3, 2, 1, 1],
         borderWidth: 0,
@@ -338,15 +342,16 @@ new Chart(ctx8, {
   },
   // plugins: [chart_counter],
   options: {
-    aspectRatio: 1.7,
+    aspectRatio: 1,
     cutout: "75%",
     plugins: {
       legend: {
+        display:false,
         // position: "chartArea",
         // textDirection: "rtl",
-        labels: {
-          boxWidth: 11,
-        },
+        // labels: {
+        //   boxWidth: 11,
+        // },
       },
       // tooltip: {
       //   filter: (tooltipItem) => {
@@ -356,70 +361,70 @@ new Chart(ctx8, {
     },
   },
 });
-new Chart(ctx9, {
-  type: "doughnut",
-  data: {
-    labels: [`Forwording:${x}`, "Active"],
-    datasets: [
-      {
-        label: "Active",
-        data: [x, 0.01],
-        borderWidth: 0,
-        backgroundColor: ["#bc5090", "#d4d4d8"],
-        hoverOffset: 1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        labels: {
-          boxWidth: 12,
-        },
-      },
-      // tooltip: {
-      //   filter: (tooltipItem) => {
-      //     return tooltipItem.dataIndex === 0;
-      //   },
-      // },
-    },
-  },
-});
-new Chart(ctx10, {
-  type: "doughnut",
-  data: {
-    labels: [`Undefinde:${x}`, "Definde"],
-    datasets: [
-      {
-        label: "Active",
-        data: [x, 0.0001],
-        borderWidth: 0,
-        backgroundColor: ["#003f5c", "#d4d4d8"],
-        hoverOffset: 1,
-      },
-    ],
-  },
-  plugins: [chart_counter],
-  options: {
-    aspectRatio: 2,
-    cutout: "85%",
-    plugins: {
-      legend: {
-        labels: {
-          boxWidth: 12,
-        },
-      },
-      // tooltip: {
-      //   filter: (tooltipItem) => {
-      //     return tooltipItem.dataIndex === 0;
-      //   },
-      // },
-    },
-  },
-});
+// new Chart(ctx9, {
+//   type: "doughnut",
+//   data: {
+//     labels: [`Forwording:${x}`, "Active"],
+//     datasets: [
+//       {
+//         label: "Active",
+//         data: [x, 0.01],
+//         borderWidth: 0,
+//         backgroundColor: ["#bc5090", "#d4d4d8"],
+//         hoverOffset: 1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         labels: {
+//           boxWidth: 12,
+//         },
+//       },
+//       // tooltip: {
+//       //   filter: (tooltipItem) => {
+//       //     return tooltipItem.dataIndex === 0;
+//       //   },
+//       // },
+//     },
+//   },
+// });
+// new Chart(ctx10, {
+//   type: "doughnut",
+//   data: {
+//     labels: [`Undefinde:${x}`, "Definde"],
+//     datasets: [
+//       {
+//         label: "Active",
+//         data: [x, 0.0001],
+//         borderWidth: 0,
+//         backgroundColor: ["#003f5c", "#d4d4d8"],
+//         hoverOffset: 1,
+//       },
+//     ],
+//   },
+//   plugins: [chart_counter],
+//   options: {
+//     aspectRatio: 2,
+//     cutout: "85%",
+//     plugins: {
+//       legend: {
+//         labels: {
+//           boxWidth: 12,
+//         },
+//       },
+//       // tooltip: {
+//       //   filter: (tooltipItem) => {
+//       //     return tooltipItem.dataIndex === 0;
+//       //   },
+//       // },
+//     },
+//   },
+// });
 
 // -----------------------collapes button----------------------
 const collapesAll =document.getElementById("collapesAll");

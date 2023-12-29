@@ -26,7 +26,7 @@
   background: #04071f;
 }
 body {
-  font-family: "Rubik", sans-serif;
+font-family: 'Merienda', cursive;
   overflow-x: hidden;
 }
 
@@ -49,9 +49,19 @@ body {
   border-left: 10px solid transparent;
 }
 .shadw {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(245, 243, 243, 0.23) 0px 3px 6px;
 }
-
+.sh{
+box-shadow:inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2) ,
+inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7) ,
+-0.5px -0.5px 0px rgba(255, 255, 255,1)  ,
+.5px .5px 0px rgba(0, 0, 0, .15) ,
+0px 12px 10px -10px rgba(0, 0, 0, 0.05) ;
+}
+.sh1{
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+             -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
 .chartBox {
   width: 700px;
   padding: 200px !important;
@@ -60,8 +70,10 @@ body {
   background: #04071f !important;
 }
 .collapes {
-  height: 250px !important;
+  height:220px !important;
   overflow: hidden !important;
+  transition: .5s !important;
+  padding: 0px !important;
 }
 .tex {
   font-size: 11px !important;
@@ -187,10 +199,58 @@ canvas{
   display: none;
 }
 
-  
-
 
 table {
   border-spacing: 0 50px; 
 }
+
+/* .bo{
+  border-left: 1px solid black;
+  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+} */
+
+.icon {
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+  position: relative;
+}
+.circle{
+  animation: circle 3s linear infinite;
+  /* box-shadow: 0px 0px 5px 1px yellow; */
+}
+.cr{
+  width: 2%;
+}
+@keyframes circle {
+  0%{
+    transform: rotate(0deg)translate(-51px)rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg)translate(-51px)rotate(-360deg);
+  }
+}
+
+
+/* .icon::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 25px;
+  height: 18px;
+  border-top-right-radius: 50px;
+  border-top: 2px solid black;
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  right: -9px;
+  width: 25px;
+  height: 18px;
+  border-top-left-radius: 50px;
+  border-top: 2px solid black;
+} */
 
