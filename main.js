@@ -93,98 +93,6 @@ const chart_counter2 = {
   },
 };
 
-// new Chart(ctx1, {
-//   type: "doughnut",
-//   data: {
-//     labels: ["Red", "Blue"],
-//     datasets: [
-//       {
-//         label: "My First Dataset",
-//         data: [300, 0.01],
-//         borderWidth: 0,
-//         backgroundColor: ["#f43f5e", "#d4d4d8"],
-//         hoverOffset: 1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//       tooltip: {
-//         filter: (tooltipItem) => {
-//           return tooltipItem.dataIndex === 0;
-//         },
-//       },
-//     },
-//   },
-// });
-// new Chart(ctx2, {
-//   type: "doughnut",
-//   data: {
-//     labels: ["Red", "Blue"],
-//     datasets: [
-//       {
-//         label: "My First Dataset",
-//         data: [300, 0.01],
-//         borderWidth: 0,
-//         backgroundColor: ["#3b82f6", "#d4d4d8"],
-//         hoverOffset: 1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//       tooltip: {
-//         filter: (tooltipItem) => {
-//           return tooltipItem.dataIndex === 0;
-//         },
-//       },
-//     },
-//   },
-// });
-// new Chart(ctx3, {
-//   type: "doughnut",
-//   data: {
-//     labels: ["Red", "Blue"],
-//     datasets: [
-//       {
-//         label: "My First Dataset",
-//         data: [300, 0.01],
-//         borderWidth: 0,
-//         backgroundColor: ["#ff9224", "#d4d4d8"],
-//         borderColor: "#0b165f",
-//         hoverOffset: 1.1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//       tooltip: {
-//         filter: (tooltipItem) => {
-//           return tooltipItem.dataIndex === 0;
-//         },
-//       },
-//     },
-//   },
-// });
-// const x = 19;
 new Chart(ctx4, {
   type: "doughnut",
 
@@ -196,7 +104,7 @@ new Chart(ctx4, {
         label: "My First Dataset",
         data: [2, 100 - 2],
         borderWidth: 0,
-        backgroundColor: ["#003f5c", "#d4d4d8"],
+        backgroundColor: ["#003f5c", "#f4f4f5"],
         borderColor: "#003f5c",
         hoverOffset: 1.1,
       },
@@ -231,7 +139,7 @@ new Chart(ctx5, {
         label: "My First Dataset",
         data: [20, 100 - 2],
         borderWidth: 0,
-        backgroundColor: ["#f95d6a", "#d4d4d8"],
+        backgroundColor: ["#059669", "#f4f4f5"],
         borderColor: "#f95d6a",
         hoverOffset: 1.1,
       },
@@ -256,36 +164,6 @@ new Chart(ctx5, {
   },
 });
 
-// new Chart(ctx6, {
-//   type: "doughnut",
-//   data: {
-//     labels: ["Red", "Blue"],
-//     datasets: [
-//       {
-//         label: "My First Dataset",
-//         data: [300, 0.01],
-//         borderWidth: 0,
-//         backgroundColor: ["#2dd4bf", "#d4d4d8"],
-//         hoverOffset: 1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//       tooltip: {
-//         filter: (tooltipItem) => {
-//           return tooltipItem.dataIndex === 0;
-//         },
-//       },
-//     },
-//   },
-// });
 new Chart(ctx7, {
   type: "doughnut",
   data: {
@@ -295,7 +173,7 @@ new Chart(ctx7, {
         labels: ["Active","Inactive"],
         data: [3, 2],
         borderWidth: 0,
-        backgroundColor: ["#a3e635", "#d4d4d8"],
+        backgroundColor: ["#a3e635", "#f4f4f5"],
         hoverOffset: 1,
       },
     ],
@@ -311,11 +189,6 @@ new Chart(ctx7, {
           boxWidth: 12,
         },
       },
-      // tooltip: {
-      //   filter: (tooltipItem) => {
-      //     return tooltipItem.dataIndex === 0;
-      //   },
-      // },
     },
   },
 });
@@ -331,12 +204,12 @@ new Chart(ctx8, {
     ],
     datasets: [
       {
-          barPercentage: 1,
+          barPercentage: .8,
           
         labels: ["Active", "Call Forward", "Follow Me", "Do Not Disturb"],
         data: [3, 2, 1, 1],
         borderWidth: 0,
-        backgroundColor: ["#003f5c77", "#0ea5e9", "#e11d48", "#a21caf"],
+        backgroundColor: ["#84cc16", "#f59e0b", "#06b6d4", "#f43f5e"],
         hoverOffset: 3,
       },
     ],
@@ -362,7 +235,7 @@ new Chart(ctx9, {
         label: "Active",
         data: [3, 0],
         borderWidth: 0,
-        backgroundColor: ["#bc5090", "#d4d4d8"],
+        backgroundColor: ["#0ea5e9", "#f4f4f5"],
         hoverOffset: 1,
       },
     ],
@@ -395,7 +268,7 @@ new Chart(ctx10, {
         label: "Active",
         data: [3, 0.0001],
         borderWidth: 0,
-        backgroundColor: ["#003f5c", "#d4d4d8"],
+        backgroundColor: ["#f43f5e", "#f4f4f5"],
         hoverOffset: 1,
       },
     ],
@@ -433,7 +306,7 @@ if(count===0){
   document.querySelector("#collapesAll i").classList.remove("fa-compress")  
   document.querySelector("#collapesAll i").classList.add("fa-expand")  
   for(let i=1;i<=10;i++){
-    // document.getElementById(`chart${i}`).classList.add("collapes"); 
+    document.getElementById(`chart${i}`).classList.add("collapes"); 
     count=1;
 }}else{
   document.querySelector("#collapesAll span").textContent="Collapses All"
@@ -447,49 +320,7 @@ if(count===0){
   }
 
 )
-// ---------------edit button ------------------------------------------
-// const draggables = document.querySelectorAll('.draggable')
-// const containers = document.querySelectorAll('.container')
 
-// draggables.forEach(draggable => {
-//   draggable.addEventListener('dragstart', () => {
-//     draggable.classList.add('dragging')
-//   })
-
-//   draggable.addEventListener('dragend', () => {
-//     draggable.classList.remove('dragging')
-//   })
-// })
-
-// containers.forEach(container => {
-//   container.addEventListener('dragover', e => {
-//     e.preventDefault()
-//     const afterElement = getDragAfterElement(container, e.clientY)
-//     const draggable = document.querySelector('.dragging')
-//     if (afterElement == null) {
-//       container.appendChild(draggable)
-//     } else {
-//       container.insertBefore(draggable, afterElement)
-//     }
-//   })
-// })
-
-// function getDragAfterElement(container, y) {
-//   const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
-
-//   return draggableElements.reduce((closest, child) => {
-//     const box = child.getBoundingClientRect()
-//     const offset = y - box.top - box.height / 2
-//     if (offset < 0 && offset > closest.offset) {
-//       return { offset: offset, element: child }
-//     } else {
-//       return closest
-//     }
-//   }, { offset: Number.NEGATIVE_INFINITY }).element
-// }
-// function init() {
-//   dragula([document.querySelector("#container")])
-// }
 
 function slist (target) {
   // (A) SET CSS + GET ALL LIST ITEMS
