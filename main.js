@@ -6,8 +6,8 @@ const collapes5 = document.getElementById("collapes5");
 const collapes6 = document.getElementById("collapes6");
 const collapes7 = document.getElementById("collapes7");
 const collapes8 = document.getElementById("collapes8");
-// const collapes9 = document.getElementById("collapes9");
-// const collapes10 = document.getElementById("collapes10");
+const collapes9 = document.getElementById("collapes9");
+const collapes10 = document.getElementById("collapes10");
 
 const chart1 = document.getElementById("chart1");
 const chart2 = document.getElementById("chart2");
@@ -17,8 +17,8 @@ const chart5 = document.getElementById("chart5");
 const chart6 = document.getElementById("chart6");
 const chart7 = document.getElementById("chart7");
 const chart8 = document.getElementById("chart8");
-// const chart9 = document.getElementById("chart9");
-// const chart10 = document.getElementById("chart10");
+const chart9 = document.getElementById("chart9");
+const chart10 = document.getElementById("chart10");
 
 collapes1.addEventListener("click", () => {
   chart1.classList.toggle("collapes");
@@ -44,14 +44,14 @@ collapes7.addEventListener("click", () => {
 collapes8.addEventListener("click", () => {
   chart8.classList.toggle("collapes");
 });
-// collapes9.addEventListener("click", () => {
-//   chart9.classList.toggle("collapes");
-//    document.querySelector("#chart9 .btn").classList.toggle("hidden")
-// });
-// collapes10.addEventListener("click", () => {
-//   chart10.classList.toggle("collapes");
-//   document.querySelector("#chart10 .btn").classList.toggle("hidden")
-// });
+collapes9.addEventListener("click", () => {
+  chart9.classList.toggle("collapes");
+   document.querySelector("#saveBtn").classList.toggle("hidden")
+});
+collapes10.addEventListener("click", () => {
+  chart10.classList.toggle("collapes");
+  document.querySelector("#saveBtn1").classList.toggle("hidden")
+});
 // -----------------------chaerts-------------------------------
 // const ctx1 = document.getElementById("myChart1");
 // const ctx2 = document.getElementById("myChart2");
@@ -61,8 +61,8 @@ const ctx5 = document.getElementById("myChart5");
 // const ctx6 = document.getElementById("myChart6");
 const ctx7 = document.getElementById("myChart7");
 const ctx8 = document.getElementById("myChart8");
-// const ctx9 = document.getElementById("myChart9");
-// const ctx10 = document.getElementById("myChart10");
+const ctx9 = document.getElementById("myChart9");
+const ctx10 = document.getElementById("myChart10");
 
 const chart_counter = {
   id: "chart_counter",
@@ -331,27 +331,52 @@ new Chart(ctx8, {
     ],
     datasets: [
       {
-        
+          barPercentage: 1,
+          
         labels: ["Active", "Call Forward", "Follow Me", "Do Not Disturb"],
         data: [3, 2, 1, 1],
         borderWidth: 0,
-        backgroundColor: ["#16a34a", "#0ea5e9", "#e11d48", "#a21caf"],
+        backgroundColor: ["#003f5c77", "#0ea5e9", "#e11d48", "#a21caf"],
         hoverOffset: 3,
       },
     ],
   },
   // plugins: [chart_counter],
   options: {
-    aspectRatio: 1,
+    indexAxis: 'y',
+    //  aspectRatio: 1.1,
+    // cutout: "15%",
+    plugins: {
+      legend: {
+        display:false,
+      },
+    },
+  },
+});
+new Chart(ctx9, {
+  type: "doughnut",
+  data: {
+    labels: [`Forwording:${3}`, "Active"],
+    datasets: [
+      {
+        label: "Active",
+        data: [3, 0],
+        borderWidth: 0,
+        backgroundColor: ["#bc5090", "#d4d4d8"],
+        hoverOffset: 1,
+      },
+    ],
+  },
+  // plugins: [chart_counter],
+  options: {
+    aspectRatio: 1.2,
     cutout: "75%",
     plugins: {
       legend: {
         display:false,
-        // position: "chartArea",
-        // textDirection: "rtl",
-        // labels: {
-        //   boxWidth: 11,
-        // },
+        labels: {
+          boxWidth: 12,
+        },
       },
       // tooltip: {
       //   filter: (tooltipItem) => {
@@ -361,84 +386,54 @@ new Chart(ctx8, {
     },
   },
 });
-// new Chart(ctx9, {
-//   type: "doughnut",
-//   data: {
-//     labels: [`Forwording:${x}`, "Active"],
-//     datasets: [
-//       {
-//         label: "Active",
-//         data: [x, 0.01],
-//         borderWidth: 0,
-//         backgroundColor: ["#bc5090", "#d4d4d8"],
-//         hoverOffset: 1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         labels: {
-//           boxWidth: 12,
-//         },
-//       },
-//       // tooltip: {
-//       //   filter: (tooltipItem) => {
-//       //     return tooltipItem.dataIndex === 0;
-//       //   },
-//       // },
-//     },
-//   },
-// });
-// new Chart(ctx10, {
-//   type: "doughnut",
-//   data: {
-//     labels: [`Undefinde:${x}`, "Definde"],
-//     datasets: [
-//       {
-//         label: "Active",
-//         data: [x, 0.0001],
-//         borderWidth: 0,
-//         backgroundColor: ["#003f5c", "#d4d4d8"],
-//         hoverOffset: 1,
-//       },
-//     ],
-//   },
-//   plugins: [chart_counter],
-//   options: {
-//     aspectRatio: 2,
-//     cutout: "85%",
-//     plugins: {
-//       legend: {
-//         labels: {
-//           boxWidth: 12,
-//         },
-//       },
-//       // tooltip: {
-//       //   filter: (tooltipItem) => {
-//       //     return tooltipItem.dataIndex === 0;
-//       //   },
-//       // },
-//     },
-//   },
-// });
+new Chart(ctx10, {
+  type: "doughnut",
+  data: {
+    labels: [`Undefinde:${3}`, "Definde"],
+    datasets: [
+      {
+        label: "Active",
+        data: [3, 0.0001],
+        borderWidth: 0,
+        backgroundColor: ["#003f5c", "#d4d4d8"],
+        hoverOffset: 1,
+      },
+    ],
+  },
+
+  options: {
+    aspectRatio: 1.2,
+    cutout: "75%",
+    plugins: {
+      legend: {
+        display:false,
+        labels: {
+          boxWidth: 12,
+        },
+      },
+      // tooltip: {
+      //   filter: (tooltipItem) => {
+      //     return tooltipItem.dataIndex === 0;
+      //   },
+      // },
+    },
+  },
+});
 
 // -----------------------collapes button----------------------
 const collapesAll =document.getElementById("collapesAll");
 
 let count=0;
-collapesAll.addEventListener("click",()=>{
-  document.querySelector("#chart10 .btn").classList.toggle("hidden")
-     document.querySelector("#chart9 .btn").classList.toggle("hidden")
+collapesAll.addEventListener("click", () => {
+  console.log("sdlkj")
+  document.querySelector("#saveBtn").classList.toggle("hidden")
+     document.querySelector("#saveBtn1").classList.toggle("hidden")
 if(count===0){
   document.querySelector("#collapesAll span").textContent="Expand All"
   document.querySelector("#collapesAll i").classList.remove("fa-compress")  
   document.querySelector("#collapesAll i").classList.add("fa-expand")  
   for(let i=1;i<=10;i++){
-    document.getElementById(`chart${i}`).classList.add("collapes"); 
+    // document.getElementById(`chart${i}`).classList.add("collapes"); 
     count=1;
 }}else{
   document.querySelector("#collapesAll span").textContent="Collapses All"
