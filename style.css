@@ -30,3 +30,11 @@
     box-shadow: #ff9224 0 3px 7px inset;
     transform: translateY(2px);
   }
+
+  .bg-gradient-curtain {
+    background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+}
+
+.bg-gradient-curtain:hover {
+    background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+}
