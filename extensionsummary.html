@@ -8,10 +8,10 @@
     <link  href="index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--     <link rel="stylesheet" href="index.css"> -->
+    <!-- <link rel="stylesheet" href="index.css"> -->
 <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap" rel="stylesheet">
     <style>
-        .paddingBetweenCols th {
+        .paddingBetweenCols th,td {
            padding: 10px 30px;
        }
        .font {
@@ -28,7 +28,7 @@
         
         <div class="flex items-center gap-[48px]">
            
-            <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl"><p>Extension Summary</p></button>
+            <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain"><p>Extension Summary</p></button>
            
             <div class="mx-4 flex items-center justify-between">
                 <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-40"><i class="fa-solid fa-download"></i><p class="m-2 font-semibold">Download CSV</p></button>
@@ -105,14 +105,15 @@
                 </tr>
             </thead>
             <tbody class="text-sm">
-               
-                
+                <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                    <td></td>
+                </tr> 
             </tbody>
         </table>
      </div>
      <footer class="bg-[#292727] text-center  bottom-0 w-full fixed">
         <span class=" text-sm text-white font-semibold p-2 rounded-md block">
-            © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+            © Copyright 2008 - 2024 voiceswift.com All rights reserved.
         </span>
      </footer>
  </div>
