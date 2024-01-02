@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="../src/style.css"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <style>
+        .paddingBetweenCols td {
+            padding: 10px 30px;
+        }
+
+        .font {
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font">
+    <div class="m-6">
+        <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
+            <!-- <div class=" bg-black  font-semibold text-white border-2  rounded-md p-3 text-sm"><p>Extensions (11)</p></div> -->
+            <div class="flex items-center gap-8">
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-file-import"></i>
+                        <p class="m-2 font-semibold">Import</p>
+                    </button>
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-file-export"></i>
+                        <p class="m-2 font-semibold">Export</p>
+                    </button>
+                </div>
+                <div class="mx-4 flex items-center justify-between relative">
+                    <input type="text"
+                        class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[450px] bg-[#fff] text-center text-lg shadow-xl"
+                        placeholder="Search..."></input>
+                    <!-- <button class="bg-[#ff9224] shadow-2xl px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button> -->
+                    <i
+                        class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[415px] cursor-pointer"></i>
+                </div>
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-plus"></i>
+                        <p class="m-2 font-semibold">Add</p>
+                    </button>
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-globe"></i>
+                        <p class="m-2 font-semibold">Show all</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-sm text-gray-600 ">
+            <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl">
+                <p>Extensions (11)</p>
+            </button>
+            <p class="text-[#155e75]">Use this to configure your SIP extensions.</p>
+        </div>
+        <!-- bg-[#fa7f4b] -->
+        <div class="my-4 relative">
+            <table class="table-auto w-full border-collapse [border-spacing:0.2rem]">
+                <thead>
+                    <tr class="bg-[#faa24b]  text-white">
+                        <th class="w-10"><input type="checkbox" class="cursor-pointer"></th>
+                        <th class="w-10">Extension</th>
+                        <th class="w-20">Effective CID Name</th>
+                        <th class="w-20">Outbound CID Name</th>
+                        <th class="w-10">Call Group</th>
+                        <th class="w-10">Context</th>
+                        <th class="w-10">Registered</th>
+                        <th class="w-10">Enabled</th>
+                        <th class="w-40">Description</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">00001</td>
+                        <td class="text-center">Effective CID Name</td>
+                        <td class="text-center">Outbound CID Name</td>
+                        <td class="text-center">Call Group</td>
+                        <td class="text-center break-words">portal.voiceswift.com</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center desc">This is a description of a voice mail of an American company which
+                            is situated in New York</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <footer class="bg-[#292727] text-center  bottom-0 w-full">
+            <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+                © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>

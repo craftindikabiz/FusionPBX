@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <style>
+        .paddingBetweenCols td,
+        th {
+            padding: 10px 30px;
+        }
+
+        .font {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .bg-gradient-curtain {
+            background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+        }
+
+        .bg-gradient-curtain:hover {
+            background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+        }
+    </style>
+</head>
+
+<body class="font">
+    <div class="m-6">
+        <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
+            <div class="flex items-center gap-32">
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-globe"></i>
+                        <p class="m-2 font-semibold">Show all</p>
+                    </button>
+                </div>
+                <div class="mx-4 flex items-center justify-between relative">
+                    <input type="text"
+                        class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[450px] bg-[#fff] text-center text-lg shadow-xl"
+                        placeholder="Search..."></input>
+                    <i
+                        class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[415px] cursor-pointer"></i>
+                </div>
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                            class="fa-solid fa-backward"></i>
+                        <p class="m-2 font-semibold">Back</p>
+                    </button>
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32">
+                        <p class="m-2 font-semibold">Next</p><i class="fa-solid fa-forward"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-sm text-gray-600">
+            <button
+                class="bg-[#292727] font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain">
+                <p>User Logs (125)</p>
+            </button>
+            <p class="text-[#155e75]">Shows authentication attempts with the result, timestamp, remote address and user
+                details.</p>
+        </div>
+
+        <div class="my-4 relative">
+            <table class="table-auto w-full border-collapse" style="border-spacing: 0.2rem;">
+                <thead>
+                    <tr class="bg-[#faa24b]  text-white paddingBetweenCol">
+                        <th class="w-10"><input type="checkbox" class="cursor-pointer"></th>
+                        <th class="w-10">Date</th>
+                        <th class="w-10">Time</th>
+                        <th class="w-10">Username</th>
+                        <th class="w-10">Type</th>
+                        <th class="w-10">Result</th>
+                        <th class="w-10">Remote Address</th>
+                        <th class="w-40">User Agent</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td class="text-center text-gray-600">02 Jan 2024</td>
+                        <td class="text-center">10:57:48 am</td>
+                        <td class="text-center">superadmin</td>
+                        <td class="text-center">login</td>
+                        <td class="text-center"><i
+                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-6 w-6 text-white text-sm"></i>
+                            <p class="m-2">Success</p>
+                        </td>
+                        <td class="text-center">103.164.211.217</td>
+                        <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                    </tr>
+                   
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="m-4 flex items-center justify-center">
+            <button
+                class="bg-[#ff9224] shadow-2xl btn px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                    class="fa-solid fa-backward"></i>
+                <p class="m-2 font-semibold">Back</p>
+            </button>
+            <button
+                class="bg-[#ff9224] shadow-2xl btn px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32">
+                <p class="m-2 font-semibold">Next</p><i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+        <footer class="bg-[#292727] text-center  bottom-0 w-full">
+            <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+                © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>

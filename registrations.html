@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap" rel="stylesheet">
+    <style>
+        .paddingBetweenCols th {
+           padding: 10px 30px;
+       }
+       .font {
+        font-family: 'Raleway', sans-serif;
+       }
+    </style>
+</head>
+<body class="font">
+    <div class="m-6">
+    <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
+        
+        <div class="flex items-center gap-40">
+           
+                <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl"><p>Registrations (0)</p></button>
+           
+            <div class="mx-4 flex items-center justify-between relative">
+                <input type="text" class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[450px] bg-[#fff] text-center text-lg shadow-xl" placeholder="Search..."></input>
+                <!-- <button class="bg-[#ff9224] shadow-2xl px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button> -->
+                <i class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[415px] cursor-pointer"></i>
+            </div>
+            <div class="mx-4 flex items-center justify-between">
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-arrows-rotate  fa-spin p-3"></i><p class="m-2 font-semibold">Refresh</p></button>
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-globe"></i><p class="m-2 font-semibold">Show all</p></button>
+            </div>
+        </div>
+    </div>
+    <div class="text-sm text-gray-600 ">
+           <!-- <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl"><p>Active Calls (0)</p></button> -->
+        <p class="text-[#155e75]">Manage current extensions registered to the system.</p>
+    </div>
+
+     <div class="my-4 relative">
+        <table class="table-auto w-full border-collapse [border-spacing:0.2rem]">
+            <thead>
+                <tr class="bg-[#faa24b]  text-white paddingBetweenCols">
+                    <!-- <th class="w-10"><input type="checkbox" class="cursor-pointer"></th> -->
+
+                        <th>
+                            <th class="w-10">User</th>
+                            <th class="w-10">Agent</th>
+                        </th>
+                        <th>
+                            <th class="w-10">Contact</th>
+                            <th class="w-20">LAN IP</th>
+                            <th class="w-20">IP</th>
+                            <th class="w-10">Port</th>
+                            <th class="w-10">Host Name</th>
+                            <th class="w-40">Status</th>
+                        </th>
+                        <th>
+                            <th class="w-40">Ping</th>
+                            <th class="w-40">Profile</th>
+
+                        </th>
+                </tr>
+            </thead>
+            <tbody class="text-sm">
+               
+                
+            </tbody>
+        </table>
+     </div>
+     <footer class="bg-[#292727] text-center  bottom-0 w-full fixed">
+        <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+            © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+        </span>
+     </footer>
+ </div>
+</body>
+</html>

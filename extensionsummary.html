@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap" rel="stylesheet">
+    <style>
+        .paddingBetweenCols th {
+           padding: 10px 30px;
+       }
+       .font {
+        font-family: 'Raleway', sans-serif;
+       }
+       .shadw {
+           box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(245, 243, 243, 0.23) 0px 3px 6px;
+         }
+    </style>
+</head>
+<body class="font">
+    <div class="m-6">
+    <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
+        
+        <div class="flex items-center gap-[48px]">
+           
+            <button class=" bg-[#292727]  font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl"><p>Extension Summary</p></button>
+           
+            <div class="mx-4 flex items-center justify-between">
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-40"><i class="fa-solid fa-download"></i><p class="m-2 font-semibold">Download CSV</p></button>
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-globe"></i><p class="m-2 font-semibold">Show all</p></button>
+            </div>
+            <div class="mx-4 flex items-center justify-between relative">
+                <input type="text" class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[270px] bg-[#fff] text-center text-lg shadow-xl" placeholder="Search..."></input>
+                <!-- <button class="bg-[#ff9224] shadow-2xl px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button> -->
+                <i class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[230px] cursor-pointer"></i>
+            </div>
+            <div class="mx-4 flex items-center justify-between">
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-rotate-left"></i><p class="m-2 font-semibold">Reset</p></button>
+                <button class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-pen-nib"></i><p class="m-2 font-semibold">Update</p></button>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-sm text-gray-600 flex items-center justify-around">
+      <div>
+        <form action="" class="flex-col items-center">
+            <div class="m-2 p-4">
+                <label for="Start date" class="bg-gray-200 mx-4 p-4">Start Date/Time</label>
+                <input type="datetime-local" id="Start date" name="Start date" class="border border-gray-200 p-3 shadw">
+            </div>
+            <div class="m-2 p-4">
+                <label for="Start date" class="bg-gray-200 mx-4 p-4">End Date/Time</label>
+                <input type="datetime-local" id="Start date" name="Start date" class="border border-gray-200 p-3 shadw">
+            </div>
+           
+          </form>
+      </div>
+      <div>
+        <form action="" class="flex-col items-center">
+            <div class="m-2 p-4 flex justify-between items-center">
+                <label for="cars" class="bg-gray-200 mx-4 p-4">Quick Select</label>
+                <select name="cars" id="cars" class="border border-gray-200 p-3 shadw cursor-pointer">
+                  <option value="volvo">Today</option>
+                  <option value="saab">Yesterday</option>
+                  <option value="opel">This week</option>
+                  <option value="audi">This month</option>
+                  <option value="audi">This year</option>
+                  <option value="audi">Last 7 days</option>
+                  <option value="audi">Last hours</option>
+                </select>
+            </div>
+            <div class="m-2 p-4 flex justify-between items-center">
+                <label for="cars" class="bg-gray-200 mx-4 p-4">Include Internal</label>
+                <select name="cars" id="cars" class="border border-gray-200 p-3 shadw cursor-pointer">
+                  <option value="volvo">True</option>
+                  <option value="saab">False</option>
+                 
+                </select>
+            </div>
+          </form>
+      </div>
+    </div>
+
+     <div class="my-4 relative">
+        <table class="table-auto w-full border-collapse [border-spacing:0.2rem]">
+            <thead>
+                <tr class="bg-[#faa24b]  text-white paddingBetweenCols">
+                        <th class="">Extension</th>
+                        <th class="">Answered</th>
+                        <th class="">Missed</th>
+                        <th class="">CC Missed</th>
+                        <th class="">Busy</th>
+                        <th class="">ALOC</th>
+                        <th class="">Inbound Calls</th>
+                        <th class="">Inbound Duration</th>
+                        <th class="">Outbound Calls</th>
+                        <th class="">Outbound Duration</th>
+                        <th class="">Description</th>
+                 
+                </tr>
+            </thead>
+            <tbody class="text-sm">
+               
+                
+            </tbody>
+        </table>
+     </div>
+     <footer class="bg-[#292727] text-center  bottom-0 w-full fixed">
+        <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+            © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+        </span>
+     </footer>
+ </div>
+</body>
+</html>

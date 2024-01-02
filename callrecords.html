@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="widtd=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../src/style.css">
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+</head>
+
+<body class="bg-white min-h-screen lg:px-10">
+    <div class="flex flex-col lg:flex-row items-center justify-between my-4">
+        <div class="my-auto">
+            <h2 class="text-amber-500 text-2xl font-semibold">
+                Call Detail Records
+            </h2>
+        </div>
+        <div class="flex gap-3 text-white text-sm font-semibold">
+
+            <button
+                class="bg-[#ff9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-chart-simple"></i>
+                <p class="m-2 font-semibold">Statistics</p>
+            </button>
+            <button
+                class="bg-[#ff9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-arrows-rotate  fa-spin p-3"></i>
+                <p class="m-2 font-semibold">Refresh</p>
+            </button>
+            <button
+                class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-file-export"></i>
+                <p class="m-2 font-semibold">Export</p>
+            </button>
+
+            <button
+                class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-trash"></i>
+                <p class="m-2 font-semibold">Delete</p>
+            </button>
+            <button
+                class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-globe"></i>
+                <p class="m-2 font-semibold">Show all</p>
+            </button>
+            <button
+                class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-backward"></i>
+                <p class="m-2 font-semibold">Back</p>
+            </button>
+            <button
+                class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-1 p-1 w-32">
+                <p class="m-2 font-semibold">Next</p><i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+    </div>
+    <p class="text-sm mb-3 text-[#155e75] m-8">
+        Call Detail Records (CDRs) are detailed information on the calls.
+        The information contains source, destination, duration, and other
+        useful call details. Use the fields to filter the information for
+        the specific call records that are desired. Records in the call list
+        can be saved locally using the Export button.
+    </p>
+    <div class="text-[#2e294e] text-sm w-4/5 mx-auto">
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="">
+                <label for="div" class="">Direction</label>
+                <div class="flex gap-3 mb-3">
+                    <select type="text" name="direction"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>Inbound</option>
+                        <option>Outbond</option>
+                        <option>Local</option>
+                    </select>
+                    <select type="text" name="leg"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>a-leg</option>
+                        <option>b-leg</option>
+                    </select>
+                </div>
+            </div>
+            <div class="">
+                <label for="status" class="">Status</label>
+                <div class="mb-3">
+                    <select type="text" name="status"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>Answered</option>
+                        <option>Missed</option>
+                        <option>Voicemail</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="mb-3">
+                <label for="extension" class="">Extension</label>
+                <div>
+                    <select type="text" name="extension"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>00001</option>
+                        <option>10001</option>
+                        <option>10002</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="callerid" class="">Caller ID</label>
+                <div class="flex gap-3">
+                    <input type="text" name="name"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Name" />
+                    <input type="number" name="number"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Number" />
+                </div>
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="mb-3">
+                <label for="startrange" class="">Start Range</label>
+                <div class="flex gap-3">
+                    <input type="datetime" name="from"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="From" />
+                    <input type="datetime" name="to"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="To" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="duration" class="">Duration (sec)</label>
+                <div class="flex gap-3">
+                    <input type="number" name="minimum-duration"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Minimum" />
+                    <input type="number" name="maximum-duration"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Maximum" />
+                </div>
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="mb-3">
+                <label for="caller-destination" class="">Caller Destination</label>
+                <div>
+                    <input type="text" name="caller-destination"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="destination" class="">Destination</label>
+                <div>
+                    <input type="text" name="destination"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="mb-3">
+                <label for="tta" class="">TTA (sec)</label>
+                <div class="flex gap-3">
+                    <input type="number" name="minimum-tta"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Minimum" />
+                    <input type="number" name="maximum-tta"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2"
+                        placeholder="Maximum" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="hangeupcause" class="">Hangup Cause</label>
+                <div>
+                    <select type="text" name="status"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>Normal Clearing</option>
+                        <option>Alloted Timeout</option>
+                        <option>Attended Transfer</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 gap-10">
+            <div class="mb-3">
+                <label for="recording" class="">Recording</label>
+                <div>
+                    <select type="text" name="recording"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>True</option>
+                        <option>False</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="order-by" class="">Order</label>
+                <div class="flex gap-3">
+                    <select type="text" name="order-by"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>Start</option>
+                        <option>TTA</option>
+                        <option>Duration</option>
+                    </select>
+                    <select type="text" name="order"
+                        class="bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-fit p-2">
+                        <option></option>
+                        <option>Ascending</option>
+                        <option>Descending</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-xs mb-3 text-[#155e75]">
+        Note: Destination and Caller ID (CID) Name fields support the use of
+        an asterisk ('*') as a wildcard character.
+    </p>
+    <div class="flex items-center justify-between gap-4 text-white text-sm font-semibold mb-4">
+        <div class="flex items-center justify-between">
+            <button
+                class="bg-[#ff9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-chart-simple"></i>
+                <p class="m-2 font-semibold">Advanced</p>
+            </button>
+            <button
+                class="bg-[#ff9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-1 p-1 w-32"><i
+                    class="fa-solid fa-rotate-left"></i>
+                <p class="m-2 font-semibold">Reset</p>
+            </button>
+        </div>
+        <input type="text"
+            class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[250px] bg-[#fff] text-center text-lg shadow-xl hover:w-[450px] ease-in-out duration-150 delay-100"
+            placeholder="Search..."></input>
+    </div>
+    <div class="text-sm mb-5">
+        <table class="w-full mb-4">
+            <tr class="font-semibold text-amber-500 border-b">
+                <th class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500" />
+                </th>
+                <th class="w-1/16">&nbsp;&nbsp;&nbsp;</th>
+                <th class="w-1/16">Ext.</th>
+                <th class="w-1/16">Caller Name</th>
+                <th class="w-1/16">Caller Number</th>
+                <th class="w-1/16">Caller Destination</th>
+                <th class="w-1/16">Destination</th>
+                <th class="w-1/16">Recording</th>
+                <th class="w-1/16">Date</th>
+                <th class="w-1/16">Time</th>
+                <th class="w-1/16">TTA</th>
+                <th class="w-1/16">Duration</th>
+                <th class="w-1/16">PDD</th>
+                <th class="w-1/16">MOS</th>
+                <th class="w-1/16">Status</th>
+                <th class="w-1/16">Hangup Cause</th>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details1"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details2"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details3"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500 checked:bg-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details3"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500 checked:bg-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details3"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500 checked:bg-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+            <tr class="text-center hover:text-amber-500 border-b cursor-pointer">
+                <td class="w-1/16">
+                    <input type="checkbox" name="caller-details" id="caller-details3"
+                        class="form-checkbox text-amber-500 focus:ring-amber-500 focus:border-amber-500 checked:text-amber-500 checked:bg-amber-500" />
+                </td>
+                <td class="w-1/16"></td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">10010</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">18888800520</td>
+                <td class="w-1/16">
+                    <div class="flex justify-center gap-1 my-1">
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button
+                            class="bg-[#ff9224] shadow-2xl rounded-md py-2 text-sm text-white w-20 flex items-center justify-center m-1 p-1 btn">
+                            <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </td>
+                <td class="w-1/16">24 Dec 2023</td>
+                <td class="w-1/16">04:06:34 pm</td>
+                <td class="w-1/16">TTA</td>
+                <td class="w-1/16">0:00:00</td>
+                <td class="w-1/16">0.04s</td>
+                <td class="w-1/16">4.50</td>
+                <td class="w-1/16">Voicemail</td>
+                <td class="w-1/16">Normal Clearing</td>
+            </tr>
+        </table>
+        <div class="m-4 flex items-center justify-center">
+            <button
+                class="bg-[#ff9224] shadow-2xl btn px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                    class="fa-solid fa-backward"></i>
+                <p class="m-2 font-semibold">Back</p>
+            </button>
+            <button
+                class="bg-[#ff9224] shadow-2xl btn px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32">
+                <p class="m-2 font-semibold">Next</p><i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+        <footer class="bg-[#292727] text-center  bottom-0 w-full">
+            <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+                © Copyright 2008 - 2023 voiceswift.com All rights reserved.
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>
