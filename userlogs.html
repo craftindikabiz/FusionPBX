@@ -25,6 +25,35 @@
             font-family: 'Raleway', sans-serif;
         }
 
+        .btn {
+
+            background-image: radial-gradient(100% 100% at 100% 0, #ff9224 100%);
+            border: 0;
+            box-shadow: rgba(45, 35, 66, .1) 0 2px 4px, rgba(45, 35, 66, .2) 0 7px 13px -3px, rgba(58, 65, 111, .1) 0 -2px 0 inset;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+        }
+
+        .btn:focus {
+            box-shadow: #ff9224 0 0 0 1.5px inset, rgba(45, 35, 66, .2) 0 2px 4px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+        }
+
+        .btn:hover {
+            box-shadow: rgba(45, 35, 66, .2) 0 4px 8px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: #ff9224 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
         .bg-gradient-curtain {
             background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
         }
@@ -38,7 +67,7 @@
 <body class="font">
     <div class="m-6">
         <div class="">
-            
+
             <!-- <div class="flex flex-col lg:flex-row justify-between gap-12 items-center  flex-wrap"> -->
             <div class="flex items-center justify-between flex-col lg:flex-row shadow-lg mb-8 p-4 gap-4">
                 <div class="mx-4 flex items-center justify-between">
@@ -58,7 +87,11 @@
                     <p class="m-2 font-semibold">Search</p>
                     <i class="fa-solid fa-magnifying-glass text-white cursor-pointer"></i>
                     </button>-->
-                    <button class="bg-[#ff9224] shadow-2xl p-2 btn pt-1 pb-1 rounded-md text-sm text-white flex items-center justify-center m-2 w-24 md:w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button>
+                    <button
+                        class="bg-[#ff9224] shadow-2xl p-2 btn pt-1 pb-1 rounded-md text-sm text-white flex items-center justify-center m-2 w-24 md:w-32"><i
+                            class="fa-solid fa-magnifying-glass"></i>
+                        <p class="m-2 font-semibold">Search</p>
+                    </button>
                 </div>
                 <div class="mx-4 flex items-center justify-between">
                     <button
@@ -97,7 +130,7 @@
                     </tr>
                 </thead>
                 <tbody class="text-sm">
-               
+
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
                         <td><input type="checkbox" class="cursor-pointer"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
@@ -182,7 +215,7 @@
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
                             AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
                     </tr>
-                   
+
                 </tbody>
             </table>
         </div>
