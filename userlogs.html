@@ -37,30 +37,37 @@
 
 <body class="font">
     <div class="m-6">
-        <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
-            <div class="flex items-center gap-32">
+        <div class="">
+            
+            <!-- <div class="flex flex-col lg:flex-row justify-between gap-12 items-center  flex-wrap"> -->
+            <div class="flex items-center justify-between flex-col lg:flex-row shadow-lg mb-8 p-4 gap-4">
                 <div class="mx-4 flex items-center justify-between">
                     <button
-                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i
+                        class="bg-[#ff9224] btn shadow-2xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-32"><i
                             class="fa-solid fa-globe"></i>
                         <p class="m-2 font-semibold">Show all</p>
                     </button>
                 </div>
-                <div class="mx-4 flex items-center justify-between relative">
+                <div class="mx-4 flex items-center justify-between">
                     <input type="text"
-                        class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[450px] bg-[#fff] text-center text-lg shadow-xl"
-                        placeholder="Search..."></input>
-                    <i
-                        class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[415px] cursor-pointer"></i>
+                        class="rounded-3xl m-2 mr-4 pt-1 pb-2 md:pt-2 md:pb-4 pl-5 pr-4 border border-gray-400 w-full bg-[#fff] text-center text-lg shadow-xl"
+                        placeholder="Search...">
+                    </input>
+                    <!-- <button
+                    class="bg-[#ff9224] btn shadow-2xl px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-24 md:w-32 hidden md:inline-flex">
+                    <p class="m-2 font-semibold">Search</p>
+                    <i class="fa-solid fa-magnifying-glass text-white cursor-pointer"></i>
+                    </button>-->
+                    <button class="bg-[#ff9224] shadow-2xl p-2 btn pt-1 pb-1 rounded-md text-sm text-white flex items-center justify-center m-2 w-24 md:w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button>
                 </div>
                 <div class="mx-4 flex items-center justify-between">
                     <button
-                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-32"><i
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-24 md:w-32"><i
                             class="fa-solid fa-backward"></i>
                         <p class="m-2 font-semibold">Back</p>
                     </button>
                     <button
-                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32">
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-32">
                         <p class="m-2 font-semibold">Next</p><i class="fa-solid fa-forward"></i>
                     </button>
                 </div>
@@ -75,7 +82,7 @@
                 details.</p>
         </div>
 
-        <div class="my-4 relative">
+        <div class="my-4 relative overflow-scroll lg:overflow-auto">
             <table class="table-auto w-full border-collapse" style="border-spacing: 0.2rem;">
                 <thead>
                     <tr class="bg-[#faa24b]  text-white paddingBetweenCol">
