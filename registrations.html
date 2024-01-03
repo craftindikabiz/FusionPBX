@@ -18,6 +18,42 @@
        .font {
         font-family: 'Raleway', sans-serif;
        }
+       .btn {
+
+background-image: radial-gradient(100% 100% at 100% 0, #ff9224 100%);
+border:0;
+box-shadow: rgba(45, 35, 66, .1) 0 2px 4px,rgba(45, 35, 66, .2) 0 7px 13px -3px,rgba(58, 65, 111, .1) 0 -2px 0 inset;
+box-sizing: border-box;
+cursor: pointer;
+transition: box-shadow .15s,transform .15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+white-space: nowrap;
+will-change: box-shadow,transform;
+}
+
+.btn:focus {
+box-shadow: #ff9224 0 0 0 1.5px inset, rgba(45, 35, 66, .2) 0 2px 4px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+}
+
+.btn:hover {
+box-shadow: rgba(45, 35, 66, .2) 0 4px 8px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+transform: translateY(-2px);
+}
+
+.btn:active {
+box-shadow: #ff9224 0 3px 7px inset;
+transform: translateY(2px);
+}
+
+.bg-gradient-curtain {
+background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+}
+
+.bg-gradient-curtain:hover {
+background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+}
     </style>
 </head>
 <body class="font">
