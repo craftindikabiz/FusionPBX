@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="../src/style.css"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <style>
+        .paddingBetweenCols td,
+        th {
+            padding: 10px 30px;
+        }
+
+        .font {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .shadw {
+            box-shadow: rgba(255, 191, 0, 0.7) 0px 3px 6px, rgba(245, 243, 243, 0.23) 0px 3px 6px;
+        }
+
+        .btn {
+
+            background-image: radial-gradient(100% 100% at 100% 0, #ff9224 100%);
+            border: 0;
+            box-shadow: rgba(45, 35, 66, .1) 0 2px 4px, rgba(45, 35, 66, .2) 0 7px 13px -3px, rgba(58, 65, 111, .1) 0 -2px 0 inset;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+        }
+
+        .btn:focus {
+            box-shadow: #ff9224 0 0 0 1.5px inset, rgba(45, 35, 66, .2) 0 2px 4px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+        }
+
+        .btn:hover {
+            box-shadow: rgba(45, 35, 66, .2) 0 4px 8px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: #ff9224 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        .bg-gradient-curtain {
+            background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+        }
+
+        .bg-gradient-curtain:hover {
+            background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #FF9224;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #FF9224;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="font">
+    <div class="m-6">
+        <div class="">
+            <div class="flex items-center justify-between flex-col lg:flex-row shadow-lg mb-8 p-4 gap-4">
+                <div class="mx-4 flex items-center justify-between order-1 md:order-1">
+                    <button
+                        class=" bg-[#292727]  font-semibold text-white border-2 w-24 md:w-[150px] mb-1 p-2 md:mb-3 md:p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain">
+                        <p>User</p>
+                    </button>
+                </div>
+
+                <div class="mx-4 flex items-center justify-between order-1 md:order-3">
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-24 md:w-28 lg:w-32">
+                        <i class="fa-solid fa-backward"></i>
+                        <p class="m-2 font-semibold">Back</p>
+                    </button>
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-28 lg:w-32">
+                        <i class="fas fa-bolt"></i>
+                        <p class="m-2 font-semibold">Save</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-sm text-gray-600 ">
+            <p class="text-[#155e75]">Edit user information and group membership.</p>
+        </div>
+
+        <div class="m-4 mt-10 mb-10 lg:grid lg:grid-cols-2 gap-10 shadow-lg">
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">UserName</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Username"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">Password</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Password"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+
+                    <span class="text-sm text-gray-500 m-2">Required: 4 Invalid Password Length</span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">Confirm Password</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Password"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+
+                    <span class="text-sm text-gray-500 m-2">Green field borders indicate typed passwords match.</span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">Email</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Username"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+                </div>
+            </div>
+
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Language</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="AF">Afrikaans</option>
+                        <option value="SQ">Albanian</option>
+                        <option value="HI">Hindi</option>
+                        <option value="HU">Hungarian</option>
+                        <option value="IS">Icelandic</option>
+                        <option value="ID">Indonesian</option>
+                        <option value="GA">Irish</option>
+                        <option value="IT">Italian</option>
+                        <option value="JA">Japanese</option>
+                        <option value="JW">Javanese</option>
+                        <option value="KO">Korean</option>
+                        <option value="LA">Latin</option>
+                    </select>
+                    <span class="text-sm text-gray-500 m-2">Select the language.</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Timezone</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                    </select>
+                    <span class="text-sm text-gray-500 m-2">Select the default time zone.</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Status</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="2">Available</option>
+                        <option value="3">Available (On Demand)</option>
+                        <option value="98">Logged Out</option>
+                        <option value="99">On Break</option>
+                        <option value="99">Do Not Disturb</option>
+                    </select>
+                    <span class="text-sm text-gray-500 m-2">Set the user's presence.</span>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">FirstName</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Username"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">LastName</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Username"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile" class="bg-gray-200 p-3 m-4 rounded-lg">Organisation</label>
+                <div class="m-4 mb-4">
+                    <input type="text" name="caller-destination" placeholder="Username"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2 shadow-lg shadw" />
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Groups</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="2">Agent</option>
+                        <option value="3">Superadmin</option>
+                        <option value="98">User</option>
+                    </select>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Type</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="2">Default</option>
+                        <option value="3">Virtual</option>
+                    </select>
+                    <span class="text-sm text-gray-500 m-2">Select Default to enable login or to disable login select
+                        Virtual.</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Domain</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <select id="rowDropdown" class="border-gray-200 shadw rounded-md p-3 m-2 w-32 md:w-40 shadow-lg">
+                        <option value="98">admin.voicesoft.com</option>
+                        <option value="99">portal.voicesoft.com</option>
+                        <option value="99">user.voicesoft.com</option>
+                    </select>
+                    <span class="text-sm text-gray-500 m-2">Select the Domain.</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">API key</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <button
+                        class="bg-[#FF9224] hover:bg-[#faa24b] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-24 md:w-28 lg:w-32">
+                        <i class="fa-solid fa-key"></i>
+                        <p class="m-2 font-semibold">Generate</p>
+                    </button>
+                    <span class="text-sm text-gray-500 m-2">Use the generate button to create a key.</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-2 mb-10">
+                <label for="html" class="bg-gray-200 m-4 p-3 rounded-lg">Enabled</label>
+                <div class="flex flex-col items-start justify-center mt-[10px]">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="text-sm text-gray-500 m-2">Set the status of this account.</span>
+                </div>
+            </div>
+
+        </div>
+        <footer class="bg-[#292727] text-center text-wrap bottom-0 w-full">
+            <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+                © Copyright 2008 - 2024 voiceswift.com All rights reserved.
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>
