@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!--     <link href="index.css" rel="stylesheet"> -->
+    <link href="index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link rel="stylesheet" href="index.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
         rel="stylesheet">
-     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .paddingBetweenCols td,
         th {
@@ -77,6 +77,11 @@
                             class="fa-solid fa-globe"></i>
                         <p class="m-2 font-semibold">Show all</p>
                     </button>
+                    <button style="display: none;"
+                        class="bg-[#ff9224] btn shadow-2xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-32 delete-button">
+                        <i class="fa-solid fa-trash"></i>
+                        <p class="m-2 font-semibold">Delete</p>
+                    </button>
                 </div>
                 <div class="mx-4 flex items-center justify-between">
                     <input type="text"
@@ -110,7 +115,7 @@
         <div class="text-sm text-gray-600">
             <button
                 class="bg-[#292727] font-semibold text-white border-2 w-[150px] mb-3 p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain">
-                <p>User Logs (125)</p>
+                <p>User Logs (171)</p>
             </button>
             <p class="text-[#155e75]">Shows authentication attempts with the result, timestamp, remote address and user
                 details.</p>
@@ -119,8 +124,8 @@
         <div class="my-4 relative overflow-scroll lg:overflow-auto">
             <table class="table-auto w-full border-collapse" style="border-spacing: 0.2rem;">
                 <thead>
-                    <tr class="bg-[#faa24b]  text-white paddingBetweenCol">
-                        <th class="w-10"><input type="checkbox" class="cursor-pointer"></th>
+                    <tr class="bg-[#faa24b] text-white paddingBetweenCol">
+                        <th class="w-10"><input type="checkbox" id="checkAll" class="cursor-pointer" onclick="toggleCheckboxes()"></th>
                         <th class="w-10">Date</th>
                         <th class="w-10">Time</th>
                         <th class="w-10">Username</th>
@@ -133,90 +138,96 @@
                 <tbody class="text-sm">
 
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="checkbox" onchange="toggleDeleteButton()"></td>
                         <td class="text-center text-gray-600">02 Jan 2024</td>
                         <td class="text-center">10:57:48 am</td>
                         <td class="text-center">superadmin</td>
                         <td class="text-center">login</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
+                        <td class="text-center">
+                            <i class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[55%] h-5 w-5 text-white text-sm"></i>
                             <p class="m-2">Success</p>
                         </td>
                         <td class="text-center">103.164.211.217</td>
                         <td class="text-center desc w-[500px]">Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</td>
+                            AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+                        </td>
                     </tr>
-
+                    
                 </tbody>
             </table>
         </div>
@@ -237,6 +248,32 @@
             </span>
         </footer>
     </div>
+    <script>
+        function toggleCheckboxes() {
+            const checkAllCheckbox = document.getElementById('checkAll');
+            const checkboxes = document.querySelectorAll('.checkbox');
+
+            for (const checkbox of checkboxes) {
+                checkbox.checked = checkAllCheckbox.checked;
+            }
+
+            toggleDeleteButton();
+        }
+        
+        function toggleDeleteButton() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const deleteButton = document.querySelector('.delete-button');
+
+            for (const checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    deleteButton.style.display = 'flex';
+                    return;
+                }
+            }
+
+            deleteButton.style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
