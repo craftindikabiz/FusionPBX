@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
+        rel="stylesheet">
+    <style>
+        .paddingBetweenCols th,
+        td {
+            padding: 10px 30px;
+        }
+
+        .font {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .shadw {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(245, 243, 243, 0.23) 0px 3px 6px;
+        }
+
+        .btn {
+
+            background-image: radial-gradient(100% 100% at 100% 0, #ff9224 100%);
+            border: 0;
+            box-shadow: rgba(45, 35, 66, .1) 0 2px 4px, rgba(45, 35, 66, .2) 0 7px 13px -3px, rgba(58, 65, 111, .1) 0 -2px 0 inset;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+        }
+
+        .btn:focus {
+            box-shadow: #ff9224 0 0 0 1.5px inset, rgba(45, 35, 66, .2) 0 2px 4px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+        }
+
+        .btn:hover {
+            box-shadow: rgba(45, 35, 66, .2) 0 4px 8px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: #ff9224 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        .bg-gradient-curtain {
+            background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+        }
+
+        .bg-gradient-curtain:hover {
+            background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+        }
+    </style>
+</head>
+
+<body class="font">
+    <div class="m-6">
+        <div class="">
+
+            <!-- <div class="flex items-center gap-[48px] flex-wrap"> -->
+            <div class="flex items-center justify-between flex-col lg:flex-row shadow-lg mb-8 p-4 gap-4">
+
+                <!-- <button class=" bg-[#292727]  font-semibold text-white border-2 w-24 md:w-32 mb-3 p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain"><p>Extension Summary</p></button> -->
+
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-30 md:w-40"><i
+                            class="fa-solid fa-download"></i>
+                        <p class="m-2 font-semibold">Download CSV</p>
+                    </button>
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-32"><i
+                            class="fa-solid fa-globe"></i>
+                        <p class="m-2 font-semibold">Show all</p>
+                    </button>
+                </div>
+                <!-- <div class="mx-4 flex items-center justify-between relative">
+                <input type="text" class="rounded-3xl m-2 mr-8 pt-2 pb-4 pl-5 pr-4 border border-gray-400 w-[170px] md:w-[230px] lg:w-[270px] bg-[#fff] text-center text-lg shadow-xl" placeholder="Search..."></input>
+                <button class="bg-[#ff9224] shadow-2xl px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-32"><i class="fa-solid fa-magnifying-glass"></i><p class="m-2 font-semibold">Search</p></button>
+                <i class="fa-solid fa-magnifying-glass text-2xl text-gray-400 absolute left-[180px] md:left-[230px] cursor-pointer"></i>
+            </div> -->
+                <div class="mx-4 flex items-center justify-between relative">
+                    <input type="text"
+                        class="rounded-3xl m-2 mr-8 pt-1 pb-2 md:pt-2 md:pb-4 pl-5 pr-4 border border-gray-400 w-full bg-[#fff] text-center text-lg shadow-xl"
+                        placeholder="Search..."></input>
+                    <button
+                        class="bg-[#ff9224] shadow-2xl p-2 btn pt-1 pb-1 rounded-md text-sm text-white flex items-center justify-center m-2 w-24 md:w-32"><i
+                            class="fa-solid fa-magnifying-glass"></i>
+                        <p class="m-2 font-semibold">Search</p>
+                    </button>
+                </div>
+                <div class="mx-4 flex items-center justify-between">
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white w-18 flex items-center justify-center m-2 p-1 w-24 md:w-32"><i
+                            class="fa-solid fa-rotate-left"></i>
+                        <p class="m-2 font-semibold">Reset</p>
+                    </button>
+                    <button
+                        class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-24 md:w-32"><i
+                            class="fa-solid fa-pen-nib"></i>
+                        <p class="m-2 font-semibold">Update</p>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <button
+            class=" bg-[#292727]  font-semibold text-white border-2 w-28 md:w-40 mb-3 p-4 text-sm rounded-3xl transition-all ease-in-out duration-300 delay-100 bg-gradient-curtain">
+            <p>Extension Summary</p>
+        </button>
+        <div class="text-sm text-gray-600 items-center justify-around flex-col flex md:flex-row">
+            <div class="">
+                <form action="" class="flex-col items-center">
+                    <div class="m-2 p-4 flex justify-between items-center">
+                        <label for="Start date" class="bg-gray-200 mx-4 p-4">Start Date/Time</label>
+                        <input type="datetime-local" id="Start date" name="Start date"
+                            class="border border-gray-200 p-3 shadw">
+                    </div>
+                    <div class="m-2 p-4 flex justify-between items-center">
+                        <label for="Start date" class="bg-gray-200 mx-4 p-4">End Date/Time</label>
+                        <input type="datetime-local" id="Start date" name="Start date"
+                            class="border border-gray-200 p-3 shadw">
+                    </div>
+
+                </form>
+            </div>
+            <div class="">
+                <form action="" class="flex-col items-center">
+                    <div class="m-2 p-4 flex justify-between items-center">
+                        <label for="cars" class="bg-gray-200 mx-4 p-4">Quick Select</label>
+                        <select name="cars" id="cars" class="border border-gray-200 p-3 shadw cursor-pointer">
+                            <option value="volvo">Today</option>
+                            <option value="saab">Yesterday</option>
+                            <option value="opel">This week</option>
+                            <option value="audi">This month</option>
+                            <option value="audi">This year</option>
+                            <option value="audi">Last 7 days</option>
+                            <option value="audi">Last hours</option>
+                        </select>
+                    </div>
+                    <div class="m-2 p-4 flex justify-between items-center">
+                        <label for="cars" class="bg-gray-200 mx-4 p-4">Include Internal</label>
+                        <select name="cars" id="cars" class="border border-gray-200 p-3 shadw cursor-pointer">
+                            <option value="volvo">True</option>
+                            <option value="saab">False</option>
+
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="my-4 relative overflow-scroll lg:overflow-auto">
+            <table class="table-auto w-full border-collapse [border-spacing:0.2rem]">
+                <thead>
+                    <tr class="bg-[#faa24b]  text-white paddingBetweenCols">
+                        <th class="">Domain</th>
+                        <th class="">Extension</th>
+                        <th class="">Answered</th>
+                        <th class="">Missed</th>
+                        <th class="">CC Missed</th>
+                        <th class="">Busy</th>
+                        <th class="">ALOC</th>
+                        <th class="">Inbound Calls</th>
+                        <th class="">Inbound Duration</th>
+                        <th class="">Outbound Calls</th>
+                        <th class="">Outbound Duration</th>
+                        <th class="">Description</th>
+
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
+                        <td>portal.voiceswift.com</td>
+                        <td>00001</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                        <td>00:00:00 </td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer class="bg-[#292727] text-center  bottom-0 w-full">
+            <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+                © Copyright 2008 - 2024 voiceswift.com All rights reserved.
+            </span>
+        </footer>
+    </div>
+</body>
+
+</html>
