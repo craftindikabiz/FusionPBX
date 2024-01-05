@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
         rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             margin: 0;
@@ -355,7 +355,7 @@
             <div id="toggleDiv3" class="flex-col hidden mb-10 shadw p-4">
                 <h1 class="text-3xl font-semibold mb-16">Appearance</h1>
                 <div class="flex-col">
-                    <div class="w-40 wrapper mb-10 shadow-lg shadw">                
+                    <div class="w-40 wrapper mb-10 shadow-lg shadw">
                         <img src="./avatar1.jpg" alt="avatar" class="w-32 mb-3 p-2 rounded-3xl" id="image" />
                     </div>
                     <div id="bar-wrap">
@@ -417,7 +417,7 @@
                 </div>
             </div>
         </div>
-        <div id="toggleDiv5" class="hidden m-4 lg:grid lg:grid-cols-2 gap-8 mb-10">
+        <div id="toggleDiv5" class="hidden m-4 grid grid-cols-2 gap-8 mb-10">
             <div class="mb-2">
                 <label for="myfile">Full Name</label>
                 <div class="mb-4">
@@ -499,8 +499,7 @@
                 toggleDiv.classList.toggle('hidden');
             });
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn2');
             const toggleDiv = document.getElementById('toggleDiv2');
@@ -509,8 +508,7 @@
                 toggleDiv.classList.toggle('hidden');
             });
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn3');
             const toggleDiv = document.getElementById('toggleDiv3');
@@ -519,8 +517,7 @@
                 toggleDiv.classList.toggle('hidden');
             });
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn4');
             const toggleDiv = document.getElementById('toggleDiv4');
@@ -529,8 +526,7 @@
                 toggleDiv.classList.toggle('hidden');
             });
         });
-    </script>
-    <script>
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn5');
             const toggleDiv = document.getElementById('toggleDiv5');
@@ -539,17 +535,17 @@
                 toggleDiv.classList.toggle('hidden');
             });
         });
+
     </script>
     <script>
         let slider = document.querySelector("#slider"),
             bar = document.querySelector("#zoom-bar-cont"),
             img = document.querySelector("#image");
 
-        //Min-max function to set up slider boundaries
         function valBetween(v, min, max) {
             return Math.min(max, Math.max(min, v));
         }
-        //function to define zoom bottom half and top half ranges
+ 
         let setZoomVal = function (val, percent, botVal = true) {
             return botVal
                 ? valBetween(percent * (1 - val) / 0.5, 0, 1 - val) + val
@@ -564,7 +560,7 @@
         }
 
         function sliderDrag(e) {
-            //Variables aren't set as global to account for possible window resize
+          
             let x0 = bar.getBoundingClientRect().left;
             let width = bar.offsetWidth;
             let dX = e.clientX - x0;
