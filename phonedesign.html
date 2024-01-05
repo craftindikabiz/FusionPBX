@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:ital,wght@1,300&family=Playfair+Display:ital@0;1&family=Poppins:wght@100&family=Raleway&family=Source+Sans+3:wght@300&family=Young+Serif&display=swap"
+        rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .shadw {
+            box-shadow: rgba(255, 191, 0, 0.7) 0px 3px 6px, rgba(245, 243, 243, 0.23) 0px 3px 6px;
+        }
+
+        .font {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .grid-item {
+            transition: transform 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .btn {
+
+            background-image: radial-gradient(100% 100% at 100% 0, #ff9224 100%);
+            border: 0;
+            box-shadow: rgba(45, 35, 66, .1) 0 2px 4px, rgba(45, 35, 66, .2) 0 7px 13px -3px, rgba(58, 65, 111, .1) 0 -2px 0 inset;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+        }
+
+        .btn:focus {
+            box-shadow: #ff9224 0 0 0 1.5px inset, rgba(45, 35, 66, .2) 0 2px 4px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+        }
+
+        .btn:hover {
+            box-shadow: rgba(45, 35, 66, .2) 0 4px 8px, rgba(45, 35, 66, .1) 0 7px 13px -3px, #ff9224 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            box-shadow: #ff9224 0 3px 7px inset;
+            /* transform: translateY(2px); */
+        }
+
+        .bg-gradient-curtain {
+            background: linear-gradient(to bottom, #292727 0%, #292727 50%, #000 100%);
+        }
+
+        .bg-gradient-curtain:hover {
+            background: linear-gradient(to bottom, #000 0%, #292727 50%, #292727 100%);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .below-first {
+            position: absolute;
+            top: 60px;
+        }
+
+        .wrapper {
+            position: relative;
+            height: 150px;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid red; */
+            margin-top: 40px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        #image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #bar-wrap {
+            border-top: 1px solid #444;
+            background: #ff9224;
+            border-radius: 20px;
+            height: 50px;
+            width: 300px;
+            border: none;
+            display: flex;
+            align-items: center;
+        }
+
+        #zoom-bar-cont {
+            height: 2px;
+            width: 200px;
+            background: #292828;
+            margin: 40px auto;
+            border-radius: 1px;
+        }
+
+        #slider {
+            height: 30px;
+            width: 8px;
+            background: #fafafa;
+            transform: translateY(50%) translateX(-50%);
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="font">
+    <div class="m-6">
+        <div class="flex items-center justify-between flex-col md:flex-row shadow-lg mb-8 p-4">
+            <div>
+                <img src="./avatar1.jpg" alt="avatar" class="w-20 mb-3 p-2 rounded-3xl" />
+            </div>
+
+            <div class="mx-4 flex flex-col md:flex-row items-center justify-between">
+                <!-- <button
+                    class="bg-[#ff9224] btn shadow-2xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-20">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button> -->
+                <div class="mx-4 flex items-center justify-between">
+                    <input type="text"
+                        class="rounded-3xl m-2 mr-4 pt-1 pb-2 md:pt-2 md:pb-4 pl-5 pr-4 border border-gray-400 w-full bg-[#fff] text-center text-lg shadow-xl"
+                        placeholder="Search...">
+                    </input>
+                    <button
+                        class="bg-[#ff9224] shadow-2xl p-2 btn pt-1 pb-1 rounded-md text-sm text-white flex items-center justify-center m-2 w-24 md:w-32"><i
+                            class="fa-solid fa-magnifying-glass"></i>
+                        <p class="m-2 font-semibold">Search</p>
+                    </button>
+                </div>
+                <div class="flex items-center justify-between p-3">
+                    <button
+                        class="bg-[#ff9224] shadow-2xl btn pt-1 pb-1 rounded-md text-sm text-white m-2 w-16 md:w-20">
+                        <i class="fa-solid fa-phone pt-3 pb-3"></i>
+                    </button>
+                    <button id="toggleBtn5"
+                        class="bg-[#ff9224] shadow-2xl btn pt-1 pb-1 rounded-md text-sm text-white m-2 w-16 md:w-20">
+                        <i class="fa-solid fa-user-plus pt-3 pb-3"></i>
+                    </button>
+                </div>
+
+            </div>
+            <div class="relative">
+                <div>
+                    <button id="toggleBtn"
+                        class="bg-[#ff9224] shadow-2xl btn m-2 pt-1 pb-1 rounded-md text-sm flex items-center justify-center text-white w-32 md:w-40">
+                        <i class="fa-solid fa-gear pt-3 pb-3"></i>
+                        <p class="m-4 font-semibold">Settings</p>
+                    </button>
+                </div>
+                <div class="flex-col items-center justify-center hidden below-first z-[99999]" id="toggleDiv">
+                    <div
+                        class="bg-[#ff9224] btn m-2 pt-1 pb-1 rounded-md text-sm flex items-center justify-start text-white w-32 md:w-40">
+                        <i class="fa-solid fa-gear pl-2 pt-1 pb-1"></i>
+                        <p class="m-2 font-semibold">Refresh Registration</p>
+                    </div>
+                    <div
+                        class="bg-[#ff9224] btn m-2 pt-1 pb-1 rounded-md text-sm flex items-center justify-start text-white w-32 md:w-40">
+                        <i class="fa-solid fa-gear pl-2 pt-1 pb-1"></i>
+                        <p class="m-2 font-semibold">Configure Extension</p>
+                    </div>
+                    <div
+                        class="bg-[#ff9224] btn m-2 pt-1 pb-1 rounded-md text-sm flex items-center justify-start text-white w-32 md:w-40">
+                        <i class="fa-solid fa-gear pl-2 pt-1 pb-1"></i>
+                        <p class="m-2 font-semibold">Add Someone</p>
+                    </div>
+                    <div
+                        class="bg-[#ff9224] btn m-2 pt-1 pb-1 rounded-md text-sm flex items-center justify-start text-white w-32 md:w-40">
+                        <i class="fa-solid fa-gear pl-2 pt-1 pb-1"></i>
+                        <p class="m-2 font-semibold">Auto Answer</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- <div class="text-sm text-gray-600 ">
+            <p class="text-[#155e75]">Other Extensions.</p>
+        </div> -->
+
+        <div
+            class=" m-2 mb-10 grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 gap-5">
+
+            <div id="toggleBtn2"
+                class="my-4 relative col-span-1 border rounded-lg shadow-xl shadw flex-col gap-6 items-center cursor-pointer grid-item h-60">
+                <div class="h-[80px] w-full text-center">
+                    <i
+                        class="fa-solid fa-video text-3xl text-black mt-8 border p-4 rounded-3xl bg-amber-500 shadow-xl shadw"></i>
+                </div>
+                <div class="text-lg font-semibold text-gray-400 text-center mt-8">Audio & Video</div>
+
+            </div>
+            <div id="toggleBtn3"
+                class="my-4 relative col-span-1 border rounded-lg shadow-xl shadw flex-col gap-6 items-center cursor-pointer grid-item h-60">
+                <div class="h-[80px] w-full text-center">
+                    <i
+                        class="fa-solid fa-pen text-3xl text-black mt-8 border p-4 rounded-3xl bg-amber-500 shadow-xl shadw"></i>
+                </div>
+                <div class="text-lg font-semibold text-gray-400 text-center mt-8">Appearance</div>
+            </div>
+            <div id="toggleBtn4"
+                class="my-4 relative col-span-1 border rounded-lg shadow-xl shadw flex-col gap-6 items-center cursor-pointer grid-item h-60">
+                <div class="h-[80px] w-full text-center">
+                    <i
+                        class="fa-solid fa-bell text-3xl text-black mt-8 border p-4 rounded-3xl bg-amber-500 shadow-xl shadw"></i>
+                </div>
+                <div class="text-lg font-semibold text-gray-400 text-center mt-8">Notifications</div>
+            </div>
+
+        </div>
+        <div>
+            <div id="toggleDiv2"
+                class="hidden m-2 mb-10 grid grid-cols-1 grid-rows-2 md:grid-cols-1 md:grid-rows-2 lg:grid-cols-1 lg:grid-rows-1 gap-2 shadow-xl shadw">
+                <div
+                    class="m-2 grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 gap-5 mb-10">
+                    <div
+                        class="my-4 mx-8 relative col-span-1 border rounded-lg shadow-xl shadw flex-col  gap-6 items-center cursor-pointer grid-item h-72 md:h-64">
+                        <div class=" mb-4 p-3 w-full text-center bg-amber-400">
+                            <h1>Speaker</h1>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-full">
+                            <progress id="file" value="32" max="100" class="w-40 mt-20"> 32% </progress>
+                            <i class="fa-solid fa-play m-4"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="my-4 mx-8 relative col-span-1 border rounded-lg shadow-xl shadw flex-col  gap-6 items-center cursor-pointer grid-item h-72 md:h-64">
+                        <div class=" mb-4 p-3 w-full text-center bg-amber-400">
+                            <h1>Ring Device</h1>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-full">
+                            <progress id="file" value="50" max="100" class="w-40 mt-20"> 50% </progress>
+                            <i class="fa-solid fa-play m-4"></i>
+                        </div>
+                    </div>
+                    <div
+                        class="my-4 mx-8 relative col-span-1 border rounded-lg shadow-xl shadw flex-col  gap-6 items-center cursor-pointer grid-item h-72 md:h-64">
+                        <div class=" mb-4 p-3 w-full text-center bg-amber-400">
+                            <h1>Microphone</h1>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-full">
+                            <progress id="file" value="40" max="100" class="w-40 mt-4"> 40% </progress>
+                            <form class=" flex flex-col items-center justify-center m-2">
+                                <div class="m-2 flex justify-between items-center">
+                                    <input type="checkbox" id="auto" name="auto" value="auto gain control">
+                                    <label for="auto" class="mx-4">Auto Gain Control</label>
+                                </div>
+                                <div class="m-2 flex justify-between items-center">
+                                    <input type="checkbox" id="echo" name="echo" value="echo cancellation">
+                                    <label for="echo" class="mx-4">Echo Cancellation</label>
+                                </div>
+                                <div class="m-2 flex justify-between items-center">
+                                    <input type="checkbox" id="noise" name="noise" value="noise supression">
+                                    <label for="noise" class="mx-4">Noise Supression</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" flex flex-col items-center justify-center">
+                    <h1 class="text-3xl font-semibold">Camera</h1>
+                    <div class="flex-col items-center justify-center mt-4">
+                        <h1 class="text-xl font-semibold text-center">Frame Rate (per sec)</h1>
+                        <div class="flex items-center justify-center flex-wrap">
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">2</button>
+                        </div>
+                    </div>
+                    <div class="flex-col items-center justify-center mt-4">
+                        <h1 class="text-xl font-semibold text-center">Quality</h1>
+                        <div class="flex items-center justify-center flex-wrap">
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-2 w-14 md:w-24">HQVGA</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-2 w-14 md:w-24">QVGA</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-24">VGA</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-24">HD</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-24">2</button>
+
+                        </div>
+                    </div>
+                    <div class="flex-col items-center justify-center mt-4">
+                        <h1 class="text-xl font-semibold text-center">Image Orientation</h1>
+                        <div class="flex items-center justify-center flex-wrap">
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-2 w-14 md:w-24">Normal</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-2 rounded-md text-sm text-white flex items-center justify-center m-2 p-2 w-14 md:w-24">Mirror</button>
+                        </div>
+                    </div>
+                    <div class="flex-col items-center justify-center mt-4">
+                        <h1 class="text-xl font-semibold text-center">Aspect Ratio</h1>
+                        <div class="flex items-center justify-center flex-wrap">
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">1:1</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">4:3</button>
+                            <button
+                                class="bg-[#ff9224] btn shadow-xl  px-1 rounded-md text-sm text-white flex items-center justify-center m-2 p-1 w-12 md:w-20">16:9</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1 class="text-xl font-semibold text-center">Preview</h1>
+                        <div class="bg-amber-400 h-40 w-60 md:w-80 mt-4 mb-10"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="toggleDiv3" class="flex-col hidden mb-10 shadw p-4">
+                <h1 class="text-3xl font-semibold mb-16">Appearance</h1>
+                <div class="flex-col">
+                    <div class="w-40 wrapper mb-10 shadow-lg shadw">                
+                        <img src="./avatar1.jpg" alt="avatar" class="w-32 mb-3 p-2 rounded-3xl" id="image" />
+                    </div>
+                    <div id="bar-wrap">
+                        <div id="zoom-bar-cont" class="relative">
+                            <div id="slider" class="absolute bottom-[50%] left-[50%]">
+                                <div class="sl-top"></div>
+                                <div class="sl-bot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="" class="m-4">
+                    <label for="myfile" class="mb-4">Select a file:</label>
+                    <input type="file" id="myfile" name="myfile" class="text-amber-600">
+                </form>
+                <div class="m-4 lg:grid lg:grid-cols-2 gap-8">
+                    <div class="mb-2">
+                        <label for="myfile">Title / Description</label>
+                        <div>
+                            <input type="text" name="caller-destination" placeholder="eg: general manager"
+                                class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="myfile">Mobile No.</label>
+                        <div>
+                            <input type="text" name="caller-destination" placeholder="eg: general manager"
+                                class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="myfile">Email</label>
+                        <div>
+                            <input type="text" name="caller-destination" placeholder="eg: general manager"
+                                class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="myfile">Contact Number 1</label>
+                        <div>
+                            <input type="text" name="caller-destination" placeholder="eg: general manager"
+                                class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="myfile">Contact Number 2</label>
+                        <div>
+                            <input type="text" name="caller-destination" placeholder="eg: general manager"
+                                class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="toggleDiv4" class="hidden mb-10 shadw p-4">
+                <h1 class="text-3xl font-semibold m-4">Notifications</h1>
+                <div>
+                    <input type="checkbox" name="notifcation" value="notification">
+                    <label for="vehicle1">Enabled onscreen notification</label><br>
+                </div>
+            </div>
+        </div>
+        <div id="toggleDiv5" class="hidden m-4 lg:grid lg:grid-cols-2 gap-8 mb-10">
+            <div class="mb-2">
+                <label for="myfile">Full Name</label>
+                <div class="mb-4">
+                    <input type="text" name="caller-destination" placeholder="eg: general manager"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                    <input type="checkbox" name="notifcation" value="notification">
+                    <label for="vehicle1">Allow calls during. Do not disturb</label>
+                </div>
+            </div>
+            <div class="mb-2">
+                <div>
+                    <input type="radio" name="basic extension" value="basic extension">
+                    <label for="html">Basic Extension</label>
+                </div>
+                <div>
+                    <input type="radio" name="address book contact" value="address book contact">
+                    <label for="html">Address Book Contact</label>
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Title / Description</label>
+                <div class="mb-4">
+                    <input type="text" name="caller-destination" placeholder="eg: general manager"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Subscribe Extension (Internal)</label>
+                <div class="mb-4">
+                    <input type="text" name="caller-destination" placeholder="eg: 100 or John"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                    <input type="checkbox" name="notifcation" value="notification">
+                    <label for="vehicle1">Subscribe to device state notifications</label>
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Mobile No.</label>
+                <div>
+                    <input type="text" name="caller-destination" placeholder="eg: +44 123-456-7890"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Email</label>
+                <div>
+                    <input type="text" name="caller-destination" placeholder="eg: John23@gmail.com"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Contact Number 1</label>
+                <div>
+                    <input type="text" name="caller-destination" placeholder="eg: +44 123-856-7560"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+            <div class="mb-2">
+                <label for="myfile">Contact Number 2</label>
+                <div>
+                    <input type="text" name="caller-destination" placeholder="eg: +43 783-356-9220"
+                        class=" bg-transparent border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-1 focus:ring-[#ffd480] focus:border-amber-500 block w-full p-2" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#292727] text-center  bottom-0 w-full fixed">
+        <span class=" text-sm text-white font-semibold p-2 rounded-md block">
+            © Copyright 2008 - 2024 voiceswift.com All rights reserved.
+        </span>
+    </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const toggleDiv = document.getElementById('toggleDiv');
+
+            toggleBtn.addEventListener('click', function () {
+                toggleDiv.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn2');
+            const toggleDiv = document.getElementById('toggleDiv2');
+
+            toggleBtn.addEventListener('click', function () {
+                toggleDiv.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn3');
+            const toggleDiv = document.getElementById('toggleDiv3');
+
+            toggleBtn.addEventListener('click', function () {
+                toggleDiv.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn4');
+            const toggleDiv = document.getElementById('toggleDiv4');
+
+            toggleBtn.addEventListener('click', function () {
+                toggleDiv.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn5');
+            const toggleDiv = document.getElementById('toggleDiv5');
+
+            toggleBtn.addEventListener('click', function () {
+                toggleDiv.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <script>
+        let slider = document.querySelector("#slider"),
+            bar = document.querySelector("#zoom-bar-cont"),
+            img = document.querySelector("#image");
+
+        //Min-max function to set up slider boundaries
+        function valBetween(v, min, max) {
+            return Math.min(max, Math.max(min, v));
+        }
+        //function to define zoom bottom half and top half ranges
+        let setZoomVal = function (val, percent, botVal = true) {
+            return botVal
+                ? valBetween(percent * (1 - val) / 0.5, 0, 1 - val) + val
+                : valBetween(percent * (val * 2 - 2), val - 1, val * 2 - 2) - (val - 2);
+        };
+        function sliderInit(e) {
+            e.preventDefault();
+            document.addEventListener("mousemove", sliderDrag);
+            document.addEventListener("mouseup", e => {
+                document.removeEventListener("mousemove", sliderDrag);
+            });
+        }
+
+        function sliderDrag(e) {
+            //Variables aren't set as global to account for possible window resize
+            let x0 = bar.getBoundingClientRect().left;
+            let width = bar.offsetWidth;
+            let dX = e.clientX - x0;
+            let dPercent = dX / width;
+            let sliderOff = slider.offsetLeft;
+
+            slider.style.left = valBetween(dX / width * 100, 0, 100) + "%";
+
+            img.style.transform =
+                "translate3d(-50%,-50%,0) scale(" +
+                (sliderOff / width < 0.5
+                    ? setZoomVal(0.4, dPercent)
+                    : setZoomVal(3, dPercent, false));
+            +")";
+        }
+
+        slider.addEventListener("mousedown", sliderInit);
+        bar.addEventListener("mousedown", sliderInit);
+
+    </script>
+</body>
+
+</html>
