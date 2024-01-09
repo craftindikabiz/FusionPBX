@@ -125,7 +125,8 @@
             <table class="table-auto w-full border-collapse [border-spacing:0.2rem]">
                 <thead>
                     <tr class="bg-[#faa24b]  text-white">
-                        <th class="w-10"><input type="checkbox" class="cursor-pointer"></th>
+                        <th class="w-10"><input type="checkbox" id="checkAll" class="cursor-pointer"
+                                onclick="toggleCheckboxes()"></th>
                         <th class="w-10">Extension</th>
                         <th class="w-20">Effective CID Name</th>
                         <th class="w-20">Outbound CID Name</th>
@@ -138,142 +139,224 @@
                 </thead>
                 <tbody class="text-sm">
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
                     <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
+                        <td><input type="checkbox" class="cursor-pointer checkbox"></td>
                         <td class="text-center text-gray-600">00001</td>
                         <td class="text-center">Effective CID Name</td>
                         <td class="text-center">Outbound CID Name</td>
                         <td class="text-center">Call Group</td>
                         <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td1" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">False</p>
                         </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
+                        <td class="text-center td2" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">True</p>
+                        </td>
+                        <td class="text-center td3" style="display: none;"
+                            onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-xmark bg-red-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
+                            <p class="m-2">False</p>
+                        </td>
+                        <td class="text-center td4" onclick="toggleTdVisibility(this.parentNode)"><i
+                                class="fa-solid fa-check bg-green-500 py-0.3 px-1 rounded-[60%] text-white text-sm"></i>
                             <p class="m-2">True</p>
                         </td>
                         <td class="text-center desc">This is a description of a voice mail of an American company which
                             is situated in New York</td>
                     </tr>
-                    <tr class="bg-[#f7f6f6] paddingBetweenCols hover:text-amber-600 cursor-pointer">
-                        <td><input type="checkbox" class="cursor-pointer"></td>
-                        <td class="text-center text-gray-600">00001</td>
-                        <td class="text-center">Effective CID Name</td>
-                        <td class="text-center">Outbound CID Name</td>
-                        <td class="text-center">Call Group</td>
-                        <td class="text-center break-words">portal.voiceswift.com</td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-xmark bg-red-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
-                            <p class="m-2">False</p>
-                        </td>
-                        <td class="text-center"><i
-                                class="fa-solid fa-check bg-green-500 py-0.5 px-1 rounded-[60%] text-white text-sm"></i>
-                            <p class="m-2">True</p>
-                        </td>
-                        <td class="text-center desc">This is a description of a voice mail of an American company which
-                            is situated in New York</td>
-                    </tr>
+
 
 
                 </tbody>
             </table>
         </div>
-        <footer class="bg-[#292727] text-center text-wrap bottom-0 w-full">
+        <footer class="bg-[#292727] text-center text-wrap bottom-0 w-full fixed">
             <span class=" text-sm text-white font-semibold p-2 rounded-md block">
                 © Copyright 2008 - 2024 voiceswift.com All rights reserved.
             </span>
         </footer>
     </div>
+    <script>
+        function toggleTdVisibility(row) {
+            var td1 = row.querySelector('.td1');
+            var td2 = row.querySelector('.td2');
+            var td3 = row.querySelector('.td3');
+            var td4 = row.querySelector('.td4');
+
+            td1.addEventListener('click', () => {
+                td1.style.display = 'none';
+                td2.style.display = 'table-cell';
+            });
+
+            td2.addEventListener('click', () => {
+                td2.style.display = 'none';
+                td1.style.display = 'table-cell';
+            });
+
+            td3.addEventListener('click', () => {
+                td3.style.display = 'none';
+                td4.style.display = 'table-cell';
+            });
+
+            td4.addEventListener('click', () => {
+                td4.style.display = 'none';
+                td3.style.display = 'table-cell';
+            });
+        }
+
+
+        function toggleCheckboxes() {
+            const checkAllCheckbox = document.getElementById('checkAll');
+            const checkboxes = document.querySelectorAll('.checkbox');
+
+            for (const checkbox of checkboxes) {
+                checkbox.checked = checkAllCheckbox.checked;
+            }
+        }
+    </script>
+
 </body>
 
 </html>
