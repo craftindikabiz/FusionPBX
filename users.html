@@ -165,6 +165,16 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        .navbar_div3 {
+            margin-left: 16px;
+            margin-right: 16px;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 1rem;
+            order: 1;
+        }
+
 
         .table_div {
             margin-top: 1rem;
@@ -251,6 +261,12 @@
                 order: 2;
             }
         }
+        @media (min-width: 768px) {
+            .navbar_div3 {
+                flex-direction: row;
+                order: 3;
+            }
+        }
 
         @media (min-width: 768px) {
             .navbar_div1_btn1 {
@@ -324,7 +340,7 @@
                     </button>
                     <!-- <i class="fa-solid fa-magnifying-glass text-md md:text-xl lg:text-2xl text-gray-400 absolute left-[180px] md:left-[302px] lg:left-[358px] cursor-pointer"></i> -->
                 </div>
-                <div class="mx-4 flex items-center justify-between order-1 md:order-3">
+                <div class="navbar_div3">
                     <button class="navbar_div1_btn2 btn"><i class="fa-solid fa-plus"></i>
                         <p class="navbar_div1_btn2_p">Add</p>
                     </button>
