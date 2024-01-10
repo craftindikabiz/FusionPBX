@@ -357,7 +357,7 @@
             <table class="table_div_tab">
                 <thead>
                     <tr class="paddingBetweenCols" style="color: white; background-color:#faa24b;">
-                        <th class="" style="width: 40px;"><input type="checkbox" class="" style="cursor:pointer"></th>
+                        <th class="" style="width: 40px; text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></th>
                         <th class="" style="width: 40px;">Username</th>
                         <th class="" style="width: 80px;">Groups</th>
                         <th class="" style="width: 80px;">Enabled</th>
@@ -366,7 +366,7 @@
                 </thead>
                 <tbody class="" style="font-size: 0.9rem;">
                     <tr class="paddingBetweenCols">
-                        <td><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
                         <td class="" style="text-align: center; color: #4a5568;">00001</td>
                         <td class="" style="text-align: center;">agent</td>
                         <td class=" td1" style="display: none; text-align: center;"
@@ -380,7 +380,7 @@
                         </td>
                     </tr>
                     <tr class="paddingBetweenCols">
-                        <td><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
                         <td class="" style="text-align: center; color: #4a5568;">00001</td>
                         <td class="" style="text-align: center;">agent</td>
                         <td class=" td1" style="display: none; text-align: center;"
@@ -394,7 +394,7 @@
                         </td>
                     </tr>
                     <tr class="paddingBetweenCols">
-                        <td><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
                         <td class="" style="text-align: center; color: #4a5568;">00001</td>
                         <td class="" style="text-align: center;">agent</td>
                         <td class=" td1" style="display: none; text-align: center;"
@@ -408,7 +408,7 @@
                         </td>
                     </tr>
                     <tr class="paddingBetweenCols">
-                        <td><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
                         <td class="" style="text-align: center; color: #4a5568;">00001</td>
                         <td class="" style="text-align: center;">agent</td>
                         <td class=" td1" style="display: none; text-align: center;"
@@ -422,7 +422,7 @@
                         </td>
                     </tr>
                     <tr class="paddingBetweenCols">
-                        <td><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
                         <td class="" style="text-align: center; color: #4a5568;">00001</td>
                         <td class="" style="text-align: center;">agent</td>
                         <td class=" td1" style="display: none; text-align: center;"
@@ -435,7 +435,21 @@
                             <p class="" style="margin: 8px;">True</p>
                         </td>
                     </tr>
-
+                    <tr class="paddingBetweenCols">
+                        <td style="text-align: left;"><input type="checkbox" class="" style="cursor:pointer"></td>
+                        <td class="" style="text-align: center; color: #4a5568;">00001</td>
+                        <td class="" style="text-align: center;">agent</td>
+                        <td class=" td1" style="display: none; text-align: center;"
+                            onclick="toggleTdVisibility(this.parentNode)">
+                            <i class="fa-solid fa-xmark cross_icon"></i>
+                            <p class="" style="margin: 8px;">False</p>
+                        </td>
+                        <td class="text-center td2" onclick="toggleTdVisibility(this.parentNode)">
+                            <i class="fa-solid fa-check check_icon"></i>
+                            <p class="" style="margin: 8px;">True</p>
+                        </td>
+                    </tr>
+                    
 
                 </tbody>
             </table>
